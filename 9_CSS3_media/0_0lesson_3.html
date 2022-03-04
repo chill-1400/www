@@ -1,0 +1,371 @@
+<!-- Лекция №3 -->
+
+<!-- 1) Вводная часть
+  Font Awesome: https://fontawesome.com/ -->
+
+<!-- 2) FlexBox -->
+
+<!-- Изучение FlexBox основы -->
+<style>
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.container div {
+  padding: 10px;
+  border: 1px solid silver;
+}
+
+.box {
+  flex-basis: 18%;
+  margin-right: 2%;
+}
+</style>
+
+<div class="container">
+  <div class="box">
+    <h3>Box 1</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
+  </div>
+  <div class="box">
+    <h3>Box 2</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+  </div>
+  <div class="box">
+    <h3>Box 3</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do labore et dolore magna aliqua</p>
+  </div>
+  <div class="box">
+    <h3>Box 4</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+  </div>
+</div>
+
+<!-- Создание мини веб сайта на основе FlexBox -->
+<style>
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  color: #fafafa;
+}
+
+.wrapper > * {
+  padding: 15px;
+  flex: 1 100%;
+}
+
+.header {
+  background: #26282B;
+}
+
+.footer {
+  background: #26282B;
+}
+
+.main {
+  text-align: left;
+  background: #1D1E21;
+}
+
+.aside-1 {
+  background: #333;
+}
+
+.aside-2 {
+  background: #333;
+}
+
+.aside { flex: 1 0 0; }
+.main    { flex: 3 0px; }
+.aside-1 { order: 1; }
+.main    { order: 2; }
+.aside-2 { order: 3; }
+.footer  { order: 4; }
+</style>
+
+<div class="wrapper">
+    <header class="header">Шапка сайта</header>
+    <article class="main">
+        <p>Главная часть сайта.</p>
+    </article>
+    <aside class="aside aside-1">Боковая часть 1</aside>
+    <aside class="aside aside-2">Боковая часть 2</aside>
+    <footer class="footer">Футер сайта</footer>
+</div>
+
+
+<!-- 3) Адаптивность веб сайтов -->
+<style>
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  color: #fafafa;
+}
+
+.wrapper > * {
+  padding: 15px;
+  flex: 1 100%;
+}
+
+/* Адаптивная шапка на сайте */
+@media(min-width: 1001px) {
+	.header {
+		background: #26282B;
+	}
+}
+
+@media(max-width: 1000px) {
+	.header {
+		background: #394658;
+	}
+}
+
+/* Адаптивный футер */
+@media screen and (min-width: 1001px) {
+	.footer {
+		background: #26282B;
+	}
+}
+
+@media(max-width: 1000px) and (min-width: 801px) {
+	.footer {
+		background: #394658;
+	}
+}
+
+@media(max-width: 800px) {
+	.footer {
+		background: #3a5a4e;
+	}
+}
+
+@media only screen and (orientation: landscape) {
+  .main {
+    background: #77643d;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .main {
+    background: #1D1E21;
+  }
+}
+
+/* Когда ширина экрана от 400px и до 800px или выше чем 1000px - мы применяем стили внутри Media Query */
+@media screen and (max-width: 800px) and (min-width: 400px), (min-width: 1000px) {
+	.main {
+	  text-align: center!important;
+	}
+}
+
+.main {
+  text-align: left;
+}
+
+.aside-1 {
+  background: #333;
+}
+
+.aside-2 {
+  background: #333;
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; background: #8d5b5b; }
+  .aside-1 { order: 1; }
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
+
+@media all and (min-width: 600px) {
+  .aside { flex: 1 0 0; }
+}
+</style>
+
+<div class="wrapper">
+  <header class="header">Шапка сайта</header>
+  <article class="main">
+    <p>Главная часть сайта.</p>
+  </article>
+  <aside class="aside aside-1">Боковая часть 1</aside>
+  <aside class="aside aside-2">Боковая часть 2</aside>
+  <footer class="footer">Футер сайта</footer>
+</div>
+
+<!-- Добавление Media Queries для link тегов -->
+<link rel="stylesheet" media="only screen and (max-width: 800px)" href="styles.css" />
+
+<!-- 4) Анимация -->
+<!-- Добавление эффектов при наведении: transition, transform -->
+<style>
+#transition, #hoverBlock {
+	margin: 100px;
+	width: 100px;
+	height: 100px;
+	background: #a94f4f;
+	transition: all 0.6s ease-in-out;
+}
+
+#transition:hover {
+	transform: scale(1.2) skew(35deg); /* rotate(30deg) */
+}
+
+#hoverBlock {
+	border: 2px solid transparent;
+	cursor: pointer;
+}
+
+#hoverBlock:hover {
+	-webkit-box-shadow: 22px 10px 5px 0px rgba(0,0,0,0.42);
+	-moz-box-shadow: 22px 10px 5px 0px rgba(0,0,0,0.42);
+	box-shadow: 22px 10px 5px 0px rgba(0,0,0,0.42);
+	border: 2px solid #772b2b;
+	opacity: 0.9;
+}
+
+#hoverBlock:active {
+	background: #813131;
+	border: 2px solid #4f1a1a;
+}
+</style>
+
+<div id="transition"></div>
+<div id="hoverBlock"></div>
+
+<!-- Создание простейшей анимации -->
+<style>
+#animBlock {
+	width: 150px;
+	height: 150px;
+	background-color: #5498c9;
+	-webkit-animation-name: gradientBlock; /* Для Safari */
+	-webkit-animation-duration: 3.5s; /* Для Safari */
+	animation-name: gradientBlock;
+	animation-duration: 3.5s;
+}
+
+/* Для Safari */
+@-webkit-keyframes gradientBlock {
+  from {background-color: #5498c9}
+  to {background-color: #a05a5a}
+}
+
+/* Стандартный синтаксис */
+@keyframes gradientBlock {
+  from {background-color: #5498c9}
+  to {background-color: #a05a5a}
+}
+</style>
+
+<div id="animBlock"></div>
+
+<!-- Большая анимация -->
+<style>
+#animBlock {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  background: #5498c9;
+  position: relative;
+  -webkit-animation-name: moving; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: moving;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite; /* количество повторений */
+  animation-direction: alternate;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes moving {
+  0%   {
+  	border-radius: 5px;
+    background: #5498c9;
+    left: 0px;
+    top: 0px;
+  }
+  25%  {
+  	border-radius: 40px;
+    background: #55cab4;
+    left: 100px;
+    top: 100px;
+  }
+  50%  {
+  	border-radius: 50%;
+    background: #ca9d55;
+    left: 100px;
+    top: 0px;
+  }
+  75%  {
+  	border-radius: 40px;
+    background: #ca6655;
+    left: 0px;
+    top: 100px;
+  }
+  100% {
+  	border-radius: 5px;
+    background: #5498c9;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+/* Standard syntax */
+@keyframes moving {
+  0%   {
+  	border-radius: 5px;
+    background: #5498c9;
+    left: 0px;
+    top: 0px;
+  }
+  25%  {
+  	border-radius: 40px;
+    background: #55cab4;
+    left: 100px;
+    top: 100px;
+  }
+  50%  {
+  	border-radius: 50%;
+    background: #ca9d55;
+    left: 100px;
+    top: 0px;
+  }
+  75%  {
+  	border-radius: 40px;
+    background: #ca6655;
+    left: 0px;
+    top: 100px;
+  }
+  100% {
+  	border-radius: 5px;
+    background: #5498c9;
+    left: 0px;
+    top: 0px;
+  }
+}
+</style>
+
+<div id="animBlock"></div>
+
+<!-- 5) Библиотека Animate.css -->
+<!--
+  Для создания быстрой анимации можно использовать библиотеку Animate.css
+  Библиотека: https://daneden.github.io/animate.css/
+-->

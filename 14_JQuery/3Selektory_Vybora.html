@@ -1,0 +1,49 @@
+<!-- Selection Selectors -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="width=decice-width, initial-scale=1" name="viewport">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jquery</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+  <div id="block">Test</div>
+  <div style="background: red; padding: 10px"></div>
+  <p class="txt">1</p>
+  <p class="txt">2</p>
+  <span class="txt">
+    <div class="block">
+      3
+    </div>
+  </span>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script>
+    $("p.txt, #block").hide();
+    $("div:not(:empty)").hide();
+    $("div").first().hide();
+    $("txt").children().hide();
+  </script>
+
+  <script>
+    // анонимная ф-ия для избежания конфликтов $ и jQuery
+    ;(function($, undefiend){
+
+    })(jQuery);
+  </script>
+
+</body>
+</html>
+
+<!-- hide() позволяет скрыть -->
+<!-- селектор first() позволяет выбрать 1й обьект -->
+<!-- селектор last() позволяет выбрать последний обьект -->
+<!-- селектор next() позволяет выбрать следующий обьект после указанного-->
+<!-- селектор prev() позволяет выбрать предыдущий обьект перед указанным-->
+<!-- селектор parent() позволяет выбрать родительский обьект-->
+<!-- селектор children() позволяет выбрать дочерний обьект-->

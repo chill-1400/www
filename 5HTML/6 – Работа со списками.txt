@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <ol start="4" type="i">
+      <li>купи молоко</li>
+      <li>купи картошку</li>
+      <li>купи машину</li>
+    </ol>
+
+    <ul type="square"> <!--or circle -->
+      <li>купи молоко</li>
+      <li>купи картошку</li>
+      <li>купи машину</li>
+    </ul>
+  </body>
+</html>

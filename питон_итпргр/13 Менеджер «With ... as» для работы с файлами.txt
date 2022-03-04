@@ -1,0 +1,20 @@
+# #1 чтение данных из файла (error)
+# file = open('text.txt', 'r')
+# file.read() #FileNotFoundError
+# file.close()
+#
+# #2 обработчик исключений (error)
+# try:
+#     file = open('text.txt', 'r')
+#     file.read()
+# except FileNotFoundError:
+#     print('файл не найден')
+# finally:
+#     file.close()
+
+#3 Менеджер «With ... as»
+try:
+    with open('text.txt', 'r', encoding='utf-8') as file:
+        print(file.read())
+except FileNotFoundError:
+    print('файл не найден')

@@ -1,0 +1,87 @@
+* {background-color: #333}
+
+.container {
+  margin: 40px;
+  padding: 0;
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  border: 1px solid #FFE4E1;
+  background: #3CB371;
+  align-items: center;
+}
+
+.transfBlock, .Block, .animBlock {
+	margin: 0px;
+  width: 90px;
+	height: 90px;
+	background: #3CB371;
+	transition: all 1s ease-in-out;
+}
+
+/* правый блок */
+
+.transfBlock {
+  background: -webkit-linear-gradient(#2E8B57 0%, #483D8B 100%);
+  align-self: flex-end;
+  z-index: 0;
+}
+
+.transfBlock:hover {
+	transform: scale(2.2) skew(-5deg) rotate(20deg); /* rotate(30deg) */
+}
+
+/* центральные блоки */
+
+.Block {
+  animation-name: coolAnimation;
+  animation-duration: 7s;
+  animation-delay: 0.1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  z-index: 1;
+}
+
+@keyframes coolAnimation {
+  0% {border-radius: 0px}
+  50% {background: #FF8C00}
+  70% {border-radius: 100px}
+  100% {border-radius: 100px}
+}
+
+/* левый блок */
+
+.animBlock {
+	background-color: #5498c9;
+	-webkit-animation-name: gradientBlock; /* Для Safari */
+	-webkit-animation-duration: 10s; /* Для Safari */
+	animation-name: gradientBlock;
+	animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  align-self: stretch;
+  z-index: 0;
+}
+
+.animBlock:hover {
+    -moz-transform: translateX(70px) translateY(90px); /* Для Firefox */
+    -ms-transform: translateX(70px) translateY(90px);  /* Для IE */
+    -webkit-transform: translateX(70px) translateY(90px);  /* Для Safari, Chrome, iOS */
+    -o-transform: translateX(70px) translateY(90px);  /* Для Opera */
+    transform: translateX(70px) translateY(105px);
+}
+
+/* Для Safari */
+@-webkit-keyframes gradientBlock {
+  from {background-color: #FF8C00}
+  to {background-color: #8A2BE2}
+}
+
+/* Стандартный синтаксис */
+@keyframes gradientBlock {
+  from {background-color: #FF8C00}
+  to {background-color: #8A2BE2}
+}

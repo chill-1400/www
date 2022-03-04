@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  </head>
+  <body>
+    <img src="https://www.33tandemconstruction.com/sites/default/files/styles/project_slider_main/public/images/project-images/IMG-Student-Union-1_8.jpg?itok=lGcjk6J6" width="500px" height="auto" title="Навели на меня" alt="отель">
+
+    <img src="IMAGES/Скриншот 15-05-2020 00_46_51.png" width=100% alt="CCRINSHOT">
+
+    <a href="https://itproger.com/">
+	<img src="https://itproger.com/img/courses/1497013085.jpg" alt="Программирование"></a>
+
+  </body>
+</html>

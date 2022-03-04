@@ -1,0 +1,164 @@
+html code
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Изучение JavaScript</title>
+</head>
+<body>
+          <!-- 1.2.3 пункты -->
+  <!-- <p id = "text" title="Обычный текст">Text</p>
+
+  <span class="simple-text">Text 1</span>
+  <span class="simple-text">Text 2</span>
+  <span class="simple-text">Text 3</span> -->
+
+<!-- 4 создание формы; отслеживание отправки данных -->
+<!-- //5 получение данных из формы; валидация данных -->
+<!-- //6 переадресация пользователя; обработчик события eventListener -->
+
+  <form id="main-form" method="post">
+    <!-- onsubmit="return checkForm(this)" атрибуты с js лучше так не использовать вместе с штмл в одном файле-->
+    <label for="name">Имя</label>
+    <input type="text" name="name" placeholder="Имя" id="name"><br><br>
+    <label for="password">Пароль:</label>
+    <input type="password" name="pass" placeholder="Пароль" id="pass"><br><br>
+    <label for="repass">Проверка пароля</label>
+    <input type="password" name="repass" placeholder="Проверка пароля" id="repass"><br><br>
+    <span>Пол:</span>
+    <input type="radio" name="state" id="male" value="Мужской">
+    <label for="female">Мужской</label>
+    <input type="radio" name="state" id="female" value="Женский">
+    <label for="female">Женский</label><br><br>
+    <div id="error" style="color: red"></div>
+    <input type="submit" name="submit" value="Готово">
+  </form>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+js code
+
+
+
+
+//1 выборка обьектов по их id; работа с html обьектами
+
+// var text = document.getElementById('text');
+// text.title = "New text";
+// console.log(text.title);
+//
+// text.style.color = "red";
+// text.style.backgroundColor = "grey";
+//
+// text.innerHTML = "New<br>string";
+
+
+//можно и так (если надо обратиться 1 раз)
+// document.getElementById('text').style.color = "white";
+
+
+
+//2 нахождение обьектов по тегу
+
+// var spans = document.getElementsByTagName('span')
+
+// for(var i = 0; i < spans.length; i++) {
+//   console.log(spans[i].innerHTML);
+// }
+
+
+
+//3 нахождение обьектов по классу
+
+// var spans = document.getElementsByClassName('simple-text')
+//
+// for(var i = 0; i < spans.length; i++) {
+//   console.log(spans[i].innerHTML);
+// }
+
+
+
+//4 создание формы; отслеживание отправки данных
+//
+// function checkForm(el) {
+//
+//   console.log("Text");
+//
+//   return false;
+// }
+
+
+
+//5 получение данных из формы; валидация данных
+//6 переадресация пользователя; обработчик события eventListener
+
+document.getElementById('main-form').addEventListener("submit", checkForm);
+
+function checkForm(event) {
+  event.preventDefault();
+  var el = document.getElementById('main-form');
+
+  var name = document.getElementById('name').value; //1 вариант
+  var name = el.name.value;//2 вариант
+  var pass = el.pass.value;
+  var repass = el.repass.value;
+  var state = el.state.value;
+
+  // console.log(name + " - " + state + " - " + pass + " - " + repass + " - ");
+
+  var fail = "";
+
+  if(name == "" || pass == "" || state == "")
+    fail = "Заполните все поля";
+  else if(name.length <= 1 || name.length > 20)
+    fail = "Введите корректное имя";
+  else if (pass != repass)
+    fail = "Пароли не совпадают";
+  else if(pass.split("&").length > 1)
+    fail = "Неккоректный пароль";
+
+    if(fail != "") {
+      document.getElementById('error').innerHTML = fail;
+    } else {
+      alert("все данные заполнены норм");
+      window.location = 'https://google.com'
+    }
+
+}
+
+
+
+
+
+
+
+
+JavaScript позволяет удобно и быстро проверять HTML-формы на их валидность. 
+
+
+
+Можно использовать атрибут «onclick» для кнопки отправки или же «onsubmit» для тега form. Внутри функции необходимо находить все поля и брать данные из них.
+
+
+
+Для нахождения полей можно использовать их идентификаторы:
+
+document.getElementById('ID_ОБЪЕКТА')
+При помощи условий вы можете проверять все поля и в случае их корректности перенаправлять пользователя куда-либо на другую страницу или отправлять данные на сервер.

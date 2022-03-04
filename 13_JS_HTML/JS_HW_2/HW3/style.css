@@ -1,0 +1,8 @@
+* {
+  background-color: lightgreen;
+  text-shadow: 1px;
+}
+
+#canvas {
+  border: 15px solid green
+}

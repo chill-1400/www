@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="георгий дуду">
+    <meta name="description" content="Тестовая страница"
+    <meta name="keywords" content="тест,проверка,html">
+
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="css/main.css">
+    <!--Подключаем табл. стилей, link для подкл css-->
+  </head>
+  <body>
+    <form action="" method="post"> <!--родительский обьект для создания формы-->
+<!--action указывает страницу куда б отпр форма, method - м. передачи данных-->
+      <label for="user_name">Введите имя</label>
+      <!--label позвол. создать подпись для поля-->
+      <input type="text" placeholder="Bведите что-то" value="name" maxlength="8" name="user_name" id="user_name"><br><br>
+      <!--input позвол. польз. вводить данные-->
+
+      <label for="user_name">Введите пароль</label>
+      <input type="password"><br><br>
+
+      <label for="user_name">Введите почту</label>
+      <input type="email"><br><br>
+
+      <label for="user_name">Введите url</label>
+      <input type="url"><br><br>
+
+      <label for="user_name">цвет</label>
+      <input type="color"><br><br>
+
+      <label for="user_name">дата рождения</label>
+      <input type="date"><br><br>
+
+      <label for="user_name">time рождения</label>
+      <input type="time"><br><br>
+
+      <label for="user_name">u are alone?</label>
+      <input type="checkbox"><br><br>
+
+      <label for="user_name">hwo u are?</label>
+      <input type="radio" name="state">м
+      <input type="radio" name="state">ж<br><br>
+
+      <input type="file"><br><br>
+
+      <input type="submit" value="отправить">
+
+      <input type="reset" value="очистить">
+    </form>
+  </body>
+</html>

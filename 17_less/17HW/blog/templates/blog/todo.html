@@ -1,0 +1,329 @@
+<!-- наследуем шаблон base -->
+{% extends 'blog/base.html' %}
+
+{% block title %}
+  {{ title }}
+{% endblock %}
+
+{% block style %}
+  <!-- Задаём CSS-стили прямо здесь же, чтобы всё было в одном файле -->
+  <style type="text/css">
+    /*Задаём общие параметры для всей страницы: шрифт и отступы*/
+
+    * {
+      color: tomato;
+    }
+
+    body {
+      background: LightSalmon;
+      text-align: center;
+      margin: 0;
+    }
+
+    h2 {
+      color: MidnightBlue;
+      cursor: default
+    }
+
+    h2:hover {
+      color: tomato;
+      opacity: 0.9;
+    }
+
+    h5 {
+      color: gray;
+    }
+
+    h5:hover {
+      color: tomato;
+      opacity: 0.9;
+    }
+
+
+    .todo {
+      background: LightGoldenrodYellow;
+      display: inline-block;
+      margin: auto;
+      border: 2px solid #eee;
+      padding: 20px 46px;
+      margin-bottom: 500px;
+    }
+
+    .todo:hover {
+      border: 2px solid black;
+    }
+
+    .todo__text,
+    .todo__add,
+    .todo__display,
+    .block {
+      border-color: RosyBrown;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    .todo__add,
+    .todo__display {
+      padding: 10px 10px;
+      cursor: pointer;
+    }
+
+    button.todo__add, button.todo__display {
+      background-color: MintCream;
+      width: 45%;
+    }
+
+    button.todo__display:hover {
+      transform: translateY(-2px);
+      background-color: GhostWhite;
+      text-shadow: 1px;
+      opacity: 0.8;
+    }
+
+    button.todo__add:hover {
+      transform: translateY(-2px);
+      background-color: GhostWhite;
+      text-shadow: 1px;
+      opacity: 0.8;
+    }
+
+    .todo__text, .block {
+      padding: 10px;
+      width: 100%;
+    }
+
+    .block {
+    cursor: pointer;
+    margin: 10px;
+    margin-top: 20px;
+    border-radius: 9px;
+    background: LightSalmon;
+    border: 0px;
+    width: 90%;
+    }
+
+    .todo__list {
+      text-align: left;
+      padding-left: 0px;
+      counter-reset: list;
+      margin-top: 30px;
+      padding: 0;
+    }
+
+    .todo__list-item {
+      cursor: pointer;
+      padding: 5px;
+      line-height: 20px;
+      position: relative;
+      display: block;
+      height: 2rem;
+      padding-left: .5rem;
+      padding-right: .5rem;
+      opacity: 0.7;
+      white-space: nowrap;
+
+    }
+
+    .todo__list-item::before {
+      content: counter(list);
+      counter-increment: list;
+      position: absolute;
+      left: -0.3rem;
+      top: 0;
+      bottom: 0;
+      width: 2rem;
+      line-height: 2rem;
+      text-align: center;
+    }
+
+    .todo__list-item:nth-child(even) {
+      background-color: #eee;
+    }
+
+    .todo__list-item:hover {
+      background-color: Teal;
+      opacity: 1;
+    }
+
+    .todo__list-item_completed_yes {
+      text-decoration: line-through;
+      color: black;
+    }
+
+    .todo__list-item-text {
+      display: inline-block;
+      max-width: 480px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .todo__list-item_completed_yes .todo__list-item-text {
+      text-decoration: line-through;
+      color: black;
+    }
+
+    .todo__list-item-remove {
+      float: right;
+      opacity: 0.3;
+      margin-left: 15px;
+    }
+
+    .todo__list-item-star {
+      float: left;
+      opacity: 0.9;
+      margin-right: 4px;
+      margin-left: 7px;
+    }
+
+    .todo__list-item-remove:hover {
+      opacity: 1;
+    }
+  /*Закончили со стилями*/
+  </style>
+  <!-- Закрываем служебную часть страницы -->
+{% endblock %}
+
+{% block window %}
+    <!-- Началась визуальная часть -->
+    <div id="list" class="todo">
+      <h2 class="todo__caption">Задачи на сегодня<br></h2>
+      <h5 class="todo__caption">Создавай список дел каждый день<br> и следи за своей эффективностью! <br><br></h5>
+      <div class="todo__controls">
+        <input type="text" class="todo__text"><br><br>
+        <button class="todo__add" disabled="disabled">Добавить</button>
+        <button class="todo__display">Отобразить</button>
+        <div class="block">Добавлена новая задача</div>
+        <ol class="todo__list" start="1">
+        </ol>
+      </div>
+    </div>
+    <!-- Закончилась видимая часть -->
+{% endblock %}
+
+
+
+{% block script %}
+  <!-- Подключаем JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+  </script>
+  <!-- Пишем скрипт, который будет обрабатывать наши задачи и хранить их-->
+  <script>
+      // $(function () {...}); вызывает функцию после загрузки страницы
+    $(function() {
+    'use strict';
+
+    /**
+     * Конструктор, инициализирующий логику списка дел
+     * на элементе с правильной версткой
+     * Параметры:
+     *  - DOM-элемент, являющийся контейнером списка
+     *    (уже с нужными дочерними элементами)
+     */
+    $("div.block").hide();
+    function Todo(elem) {
+      // Ищем вложенные элементы, которые будут использованы в дальнейшем
+      // Если их не будет - ошибки не возникнет, просто создадутся пустые jQuery-объекты
+      this.eList = elem.find('.todo__list');
+      this.eText = elem.find('.todo__text');
+      this.eButton = elem.find('.todo__add');
+
+      // Кешируем контекст вызова (созданный объект),
+      // чтобы использовать его в обработчиках
+      var that = this;
+
+      // Добавляем обработчик изменения поля ввода
+      this.eText.on('input', function () {
+        // Поле ввода не пусто => разблокируем кнопку "Добавить", иначе блокируем
+        that.eButton.prop('disabled', !this.value);
+        // здесь this - это тот элемент, на котором случилось событие
+      });
+
+      // Добавляем обработчик нажатия на кнопку "Добавить"
+      // (не сработает, если кнопка заблокирована)
+      this.eButton.on('click', function () {
+        var val = that.eText.val();
+
+        // Если поле ввода не пусто
+        if (val) {
+          // вызываем метод добавления элемента в список
+          that.addItem(val);
+
+          // очищаем поле и блокируем кнопку
+          // (при изменении поля в коде обработчик изменения поля не вызывается)
+          that.eText.val('');
+          that.eButton.prop('disabled', true);
+        }
+      });
+
+      // Добавляем обработчик изменения статусов элементов списка (на сам список)
+      // jQuery позволяет обрабатывать событие на всех дочерних элементах,
+      // попадающих в условие селектора (второй параметр) -
+      // в данном случае, на всех элементах списка
+      // это позволяет не подписывать обработчик на каждый элемент отдельно
+      this.eList.on('click', '.todo__list-item', function () {
+        var COMPLETED_CLASS = 'todo__list-item_completed_yes';
+        var item = $(this);
+
+        item.hasClass(COMPLETED_CLASS) ?
+          item.removeClass(COMPLETED_CLASS) :
+          item.addClass(COMPLETED_CLASS);
+      });
+
+      // Добавляем обработчик клика по удалялке внутри элемента списка
+      // Добавляем тоже на список, чтобы не возиться с каждым элементом по отдельности
+      this.eList.on('click', '.todo__list-item-remove', function (e) {
+        // Ищем ближайший предок, являющийся элементом списка, и удаляем его из DOM.
+        // Если у него были бы првязанные обработчики, .remove() бы их почистил,
+        // но их нет - они заданы на самом списке
+        $(this).closest('.todo__list-item').remove();
+      });
+    }
+
+    /**
+     * Метод добавления задачи в список
+     * Параметры
+     *  - Текст задачи
+     *  - Флаг "выполнена" (сейчас не используется)
+     */
+    Todo.prototype.addItem = function(text, isCompleted) {
+      // jQuery позволяет создавать DOM-объекты из HTML-строки
+      var item = $(
+        '<li class="todo__list-item">'+
+          '<span class="todo__list-item-star">&#11088;</span>'+
+          '<span class="todo__list-item-text"></span>' +
+          '<span class="todo__list-item-remove">&#10062;</span>' +
+        '</li>'
+      );
+
+      // Выставляем правильное состояние завершения в зависимости от isCompleted
+      if (isCompleted) {
+        // метод .addClass уже реализован в jQuery
+        item.addClass('todo__list-item_completed_yes');
+      }
+      // вставляем текст в список
+      item.find('.todo__list-item-text').text(text);
+
+      // Вставляем созданный элемент в список
+      this.eList.append(item);
+    }
+    // Инициализируем логику списка задач на элементе с id="list"
+    var todo = new Todo($('#list'));
+    });
+
+    $(".todo__list").hide();
+
+    $("button.todo__display").on('click', function(){
+      $(".todo__list").show();
+      $("div.block").hide();
+    });
+
+    $("button.todo__add").on('click', function(){
+      $(".todo__list").hide();
+      $("div.block").slideDown(2000);
+      $("div.block").fadeOut(1000);
+    });
+  // Закончился основной скрипт
+  </script>
+  <!-- Закончилось содержимое страницы-->
+{% endblock %}

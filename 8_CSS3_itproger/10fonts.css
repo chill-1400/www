@@ -1,0 +1,15 @@
+/* @font-face {
+  font-family: Roboto-Regular;
+  src: url("../fonts/Roboto-Regular.ttf")
+} */
+
+/* p.txt {
+  font-family: Roboto-Regular;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+p.txt {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}

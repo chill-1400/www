@@ -1,0 +1,34 @@
+#1 создание ошибки и обработчиka исключений
+# try: # в блоке трай мы говорим что пробуем что-либо реализовать
+#     x = int(input("Введите число: "))
+#     x += 5
+#     print(x)
+# except  ValueError:
+#     print("введи число бл!!!  ")
+
+
+
+#2 практическое применение
+# x =0
+# while x == 0:
+#     try:  # в блоке трай мы говорим что пробуем что-либо реализовать
+#         x = int(input("Введите число: "))
+#         x += 5
+#         print(x)
+#     except  ValueError:
+#         print("введи число бл!!!  ")
+
+
+
+#3 разные ошибки, блок else
+try:
+    x = 5 / 1
+    x = int(input())
+except ZeroDivisionError:
+    print("я поделю тебя на ноль!!!")
+except ValueError:
+    print("Вы ввели что-то не так")
+else:
+    print('else')
+finally: #удобен в файлах
+    print("Finally")

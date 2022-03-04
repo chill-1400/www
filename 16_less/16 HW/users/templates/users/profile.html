@@ -1,0 +1,73 @@
+<!-- наследуем шаблон base -->
+{% extends 'blog/base.html' %}
+
+{% block title %}
+  Кабинет Пользователя
+{% endblock %}
+
+{% block style %}
+  <style type="text/css">
+
+    body{
+      background: white;
+      text-align: center;
+    }
+
+    h1 {color: green}
+
+    div.media{
+      width: 40%;
+      margin-left: 30%;
+      margin-right: 30%;
+      padding-top: 15px;
+      padding-bottom: 0px;
+      padding-left: 30px;
+      padding-right: 30px;
+      background: #fafafa;
+    }
+
+    div.alert {
+      width: 40%;
+      margin-left: 30%;
+      margin-right: 30%;
+    }
+
+    footer{
+      position: relative;
+      bottom: 0;
+    }
+
+    div.block:hover{
+      opacity: 0;
+      transition: opacity 2200ms ease;
+    }
+
+  </style>
+{% endblock %}
+
+{% block window %}
+<div class="media text-muted pt-3">
+  <h1>Кабинет пользователя</h1><br>
+  <img class="bd-placeholder-img mr-2 rounded" width="64" height="64" src="{{ user.profile.img.url }}">
+  <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+    <strong class="d-block text-gray-dark">@{{ user.username }}</strong>
+    {% if user.email %}
+      <b>Email:</b> {{ user.email }}
+    {% endif %}
+  </p>
+</div>
+<form method="post" enctype="multipart/form-data" class="form-register mt-4">
+  {% csrf_token %}
+  {{ updateUserForm.as_p }}
+  {{ profileForm.as_p }}
+  <button class="btn btn-outline-warning" type="submit">Обновить<i class="fas fa-arrow-right"></i></button>
+</form>
+{% endblock %}
+
+{% block script %}
+  <script>
+    // $("button.btn").on('click', function(){
+    //   $("div.block").fadeOut(1000);
+    // });
+  </script>
+{% endblock %}

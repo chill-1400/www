@@ -1,0 +1,189 @@
+<!-- Built-in Functions -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="width=decice-width, initial-scale=1" name="viewport">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jquery</title>
+  <link rel="stylesheet" href="css/4Vstroyennyye_funktsii.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+</head>
+<body>
+
+  <div id="block">Test</div>
+  <div style="background: red; padding: 10px"></div>
+  <p class="txt">1</p>
+  <p class="txt">2</p>
+  <span class="txt">
+    <div class="block" style="display: none">
+      3 блок внутри
+    </div>
+  </span>
+  <input type="text" name="" value="pass" class="pswd">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!--1 работа с св-ми при помощи .css-->
+<!--
+  <script>
+    // анонимная ф-ия для избежания конфликтов $ и jQuery
+    ;(function($, undefiend){
+      $("#block").css("background", "silver")
+      $("#block").css("padding", "10px")
+    })(jQuery);
+  </script>
+
+  <script>
+  // сразу работа с неск-ми св-ми
+    ;(function($, undefiend){
+      $("#block").css({
+        "width": "100px",
+        "height": "100px",
+        "border-radius": "5px"
+      });
+      // при помощи ф-ии css мы можем получать данные о каком-либо свойстве
+      var background = $("#block").css("background");
+      alert(background);
+    })(jQuery);
+  </script>
+-->
+
+
+<!--2 Добавление классов-->
+<!--
+<script>
+  //Добавим класс к div
+  ;(function($, undefiend){
+    $("#block").addClass("test main");
+    $("#block").removeClass("main");
+    var isClass = $("#block").hasClass("test");
+    alert(isClass);
+  })(jQuery);
+</script>
+-->
+
+
+<!--3 добавление аттрибутов-->
+<!--
+<script>
+  //Добавим атрибут к div с классом блок
+  ;(function($, undefiend){
+    var attr = $("div.block").attr("id", "newOne");
+    alert(attr);
+    // удаление атрибута
+    $("div.block").removeAttr("id");
+  })(jQuery);
+</script>
+-->
+
+
+<!--4 Работа с свойствами prop(сделать активным\пасивным)-->
+<!--
+  <script>
+  //сделаем инпут неактивным
+  ;(function($, undefiend){
+    $("input").prop("disabled", true);
+    alert($("input").prop("disabled"));
+  })(jQuery);
+  </script>
+ -->
+
+
+<!--5 ф-ии которые прячут и показывают обьект-->
+<!--
+<script>
+  ;(function($, undefiend){
+    //спрячем p
+    $("p").hide("fast");
+    //отобразим p
+    $("p").show();
+    //toggle делает инвепсию с отображением обьекта
+    $("p").toggle();
+    // slideUp скрывает с анимацией скрола вверх
+    $("p").slideUp();
+    //slideDown раскрывает обьект
+    $("div.block").slideDown();
+    // ф-я для показывания обьектов fadeIn(прозрачность)
+    $("div.block").fadeIn();
+    // ф-я для скрытия обьекта fadeOut(прозрачность)
+    $("div.block").fadeOut("slow");
+    $("div.block").fadeToggle("200");
+  })(jQuery);
+</script>
+-->
+
+<!--6 фунции чтобы узнать высоту и ширину обьекта-->
+<!--
+  <script>
+  ;(function($, undefiend){
+    alert($("input").width());
+    alert($("input").val());
+    //чтобы взять текст внутри блока
+    alert($(".block").text());
+    alert($("span.txt").text());
+    // + ко всему выведет html
+    alert($("span.txt").html());
+    // чтобы установить html или текст
+    alert($("span.txt").text("Hi"));
+    alert($("span.txt").html("<b>Hi</b>"));
+    //чтобы очистить элемент от всех данных - empty
+    alert($("span.txt").empty());
+    //чтобы удалить весь элемент - remove
+    alert($("span.txt").remove());
+  })(jQuery);
+  </script>
+-->
+
+<!--7 в jQuery мы можем добавлять различную анимацию к блокам-->
+<!--
+  <script>
+  ;(function($, undefiend){
+    $("#block").animate({
+      // прибавим 100 пикселей к ширине обьекта
+      "width": $("#block").width() + 100,
+      // установим высоту обьекта
+      "height": "100px",
+      "border-radius": "50px"
+    }, 3000);
+  })(jQuery);
+  </script>
+-->
+
+<!--8 ф-ии позволяющие добавить нов эл-ты в html разметку-->
+  <script>
+  ;(function($, undefiend){
+    // после чего вставляем - афтер (что вставлям)
+    $("#block").after($("input.pswd"));
+    $("#block").after($("<h3>Test</h3>"));
+    // что вставлям - insertAfter (после чего вставляем)
+    $("<h3>Test</h3>").insertAfter($("#block"));
+    //до чего вставляем - before (что вставлям)
+    $("#block").before($("input.pswd"));
+    $("#block").before($("<h3>Test</h3>"));
+    // что вставлям - insertBefore (до чего вставляем)
+    $("<h3>Test</h3>").insertBefore($("#block"));
+    //append позволяет вставить во внутрь обьекта (в конец)
+    $("#block").append($("<h3>append</h3>"));
+    //prepend позволяет вставить во внутрь обьекта (в начало)
+    $("#block").prepend($("<h3>prepend</h3>"));
+    //replaceWith позволяет заменить данные
+    $("#block").replaceWith($("<h3>replaceWith</h3>"));
+  })(jQuery);
+  </script>
+
+</body>
+</html>
+
+
+<!-- ф-я .css позволяет добавить стили -->
+
+<!-- при помощи ф-ии css мы можем получать данные о каком-либо свойстве -->
+
+<!--ф-я hasClass возвращает true или false -->
+
+<!-- атрибут можно получить так
+var attr = $("div.block").attr("class"); -->
+
+<!--также есть slideToggle() -->

@@ -1,0 +1,58 @@
+/* главный наш блок б. дисплей флекс */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* align-items: center; */
+}
+
+.container > div {
+  /* padding: 10px; */
+  /* border: 1px solid silver; */
+  margin-right: 10px;
+  /* добавим ко всем блокам ширину */
+  flex-basis: 40%
+}
+
+.box-1 {
+  /* flex-basis: 18%;
+  margin-right: 2%; */
+  /* flex: 1; */
+  align-self: flex end;
+}
+.box-2 {
+  /* flex: 1; */
+  /* order:1; */
+  align-self: stretch;
+
+}
+.box-3 {
+  /* flex: 1; */
+  /* order: -1; */
+}
+
+
+/* width - ширина */
+
+/* margin-left - отступ слева */
+
+/* flex-basis - тот же width, только оно больше ориентировано на flex boxes*/
+
+/* flex: 1 - тоже свойство, которое работает с шириной блока */
+
+/* order - помогает сортировать элементы */
+
+/* flex-wrap: wrap; - способность переноса данных на нов. строку (wrap-reverse - в обратной послед.)*/
+
+/* justify-content: - позволяет указать, как б. распологаться наши элементы
+(space-between - позволяет указать 1 элемент слева прижат, последний справа)
+(space-around - позволяет указать ,чтобы элементы расположились с равными отступами слева и справа)*/
+
+/* flex-directions:- расположение эл-ов (wrap; - в ряд, column - колонки)*/
+
+  /* align-items: - позволяет расположить эл-ты по вертикали(stretch - растягивание эл-ов на одну высоту[по умолчанию],
+  center - по центру, baseline - по центру среди всех обьектов)*/
+
+/* align-self: flex end - позволяет прижать эл-т к низу */
+/* align-self: stretch; - растянет на всю высоту */

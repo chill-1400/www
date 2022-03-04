@@ -1,0 +1,73 @@
+<!-- 5Event Handlers -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="width=decice-width, initial-scale=1" name="viewport">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jquery</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- <button onclick="clickBtn()">Сделать</button>  лучше через обработчик событий в jQuery-->
+    <button class="send">Сделать</button>
+    <div id="block">Test</div>
+    <div style="background: red; padding: 10px"></div>
+    <p class="txt">1</p>
+    <p class="txt">2</p>
+    <span class="txt">
+      <div class="block" style="display: none">
+        3 блок внутри
+      </div>
+    </span>
+    <input type="text" name="" value="">
+    <div id="textShow">
+
+    </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!--лучше через обработчик событий в jQuery
+   <script>
+    functionclickBtn() {
+      $("#block").toggle();
+    }
+  </script>
+ -->
+
+  <script>
+  // .on - вешаем событие
+    $("button.send").on('click', function(){
+      $("#block").fadeToggle();
+    });
+
+    // .off - удаляем событие
+    $("button.send").off('click');
+    //выполнение события в автоматическом режиме
+    $("button.send").trigger('click');
+
+    // .on - вешаем событие (при нажатии на клавишу) keydown
+    // keyup - лучше (некоторые нюансы)
+    $("input").on('keyup', function(){
+      // получаем данные из текстого поля
+      var text = $("input").val();
+      $("#textShow").text(text);
+      });
+
+    // можно повесить обработчик событий на целый файл
+    // .ready - значит ф-я сработает тогда, когда страница(эл-т) б. загружена
+    $(document).ready(function() {
+      console.log("Hello");
+    });
+  </script>
+
+</body>
+</html>
+
+<!-- $("button.send").on('событие,которое отслеживаем', анонимная функция() {
+  само событие
+}); -->
+
+<!-- fadeToggle() добавляет плавность -->

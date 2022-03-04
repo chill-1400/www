@@ -1,0 +1,61 @@
+html file 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML + CSS</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="block">Lemon</div>
+
+  <span class="block">Lemon</span>
+</body>
+</html>
+
+
+
+
+
+
+css file
+
+
+
+
+/*2 variant*/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+.block {
+  /*добавление обводки*/
+  background: yellow;
+  height: 200px;
+  width: 200px;
+  border: 7px dotted green;
+  border-bottom: 0;
+  border-top-style: solid;
+  border-style: double;
+
+  /*округление углов*/
+  border-radius: 15px 50%;
+  /*прозрачность*/
+  opacity: 0.7;
+  /*внешние и внутренние отступы*/
+  /*1 variant*/
+  margin: 20px 50px 1px 49px;
+       /*up right bottom left*/
+  padding: 20px 50px;
+
+  /*строчный элемент в формате блока*/
+  display: table;
+}
+

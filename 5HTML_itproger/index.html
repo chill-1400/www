@@ -1,0 +1,260 @@
+<!-- Лекция №1 -->
+
+<!-- 1) Вводная часть
+  Редактор Atom: https://atom.io/
+  Плагин для написания HTML - Emmet: https://emmet.io/. -->
+
+<!-- 2) Основная структура страницы -->
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+</body>
+</html>
+
+<!-- 3) Отображение на странцие, комментарии -->
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  Здесь находиться текст, который будет выведен на экран.
+  <!-- Этот текст не будет выведен на экран, так как это комментарий -->
+</body>
+</html>
+
+<!-- 4) Использование тега head -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Описание страницы, больше служит для Google и других поисковиков">
+  <meta name="keywords" content="ключевые слова на странице">
+  <title>Заголовок страницы</title>
+  <link rel="stylesheet" href="main.css" type="text/css" charset="utf-8">
+  <script type="text/javascript"></script>
+</head>
+<body>
+  Здесь находиться текст, который будет выведен на экран.
+  <!-- Этот текст не будет выведен на экран, так как это комментарий -->
+</body>
+</html>
+
+<!-- 5) Теги для работы с текстом -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Описание страницы, больше служит для Google и других поисковиков">
+  <meta name="keywords" content="ключевые слова на странице">
+  <title>Заголовок страницы</title>
+</head>
+<body>
+  Текст без абзаца
+  <p>Текст в абзаце</p>
+  <p>Перенос строк будет, если прописать &lt;br&gt;.<br> Вот тому пример.</p>
+
+  <p>Этот текст <b>жирный</b>, а этот <em>курсивом</em>. Также есть аналоги: <strong>жирный</strong>, <i>курсив</i>.</p>
+  <p>Для изменения размера используйте <big>тег Big</big> или же <small>тег small</small>.</p>
+  <p>Для написания больших цитат blockquote, а маленьких q:</p>
+  <blockquote>Путь в тысячу миль начинается с одного шага</blockquote>
+  <q>Не крошка, а маленькая</q>
+  <h1>Большой заголовок на странице</h1>
+  <!-- Используем emmet для написания всех заголовков h$*6{Заголовок #$} -->
+  <h2>Заголовок #2</h2>
+  <h3>Заголовок #3</h3>
+  <h4>Заголовок #4</h4>
+  <h5>Заголовок #5</h5>
+  <h6>Заголовок #6</h6>
+
+  <!-- Центрирование объекта -->
+  <center>Текст по центру</center>
+  <hr>
+  <p>
+    Стилизация кода. Для небольшого отрывка: <code>i = 20;</code>, для большого:
+    <pre>function some() {
+      val++;
+    } </pre>
+  </p>
+  <p>
+    Стили для текста:<br>
+    <address>USA, WA Seattle,<br>020211</address><br>
+    Маркированный <mark>текст</mark><br>
+    <u>Подчеркнутый</u><br>
+    <strike>Перечеркнутый</strike> и <s>аналог</s><br>
+    3<sup>3</sup><br>
+    H<sub>2</sub>O<br>
+    <abbr>HTML</abbr>
+  </p>
+</body>
+</html>
+
+<!-- 6) Атрибуты и их применение -->
+<abbr title="HyperText Markup Language">HTML</abbr>
+<p align="right">Обычный текст</p>
+<h1 title="Текст при наведении" align="center">Текст</h1>
+<q cite="https://itproger.com">Небольшая цитата</q>
+
+<!-- 7) Списки данных -->
+<ul>
+  <li >Элемент #1</li>
+  <li>Элемент #2</li>
+  <li>Элемент #3</li>
+</ul>
+
+<ul type="square"> <!-- circle, disc, none -->
+  <li >Элемент #1</li>
+  <li>Элемент #2</li>
+  <li>Элемент #3</li>
+</ul>
+
+<ol start="3"> <!-- circle, disc, none -->
+  <li >Элемент #1</li>
+  <li>Элемент #2</li>
+  <li>Элемент #3</li>
+</ol>
+
+<!-- 7) Создание ссылок -->
+<a href="http://google.com">Текст ссылки</a>
+<a href="/some" title="Посмотреть" target="_blank">Текст ссылки</a>
+<a href="https://itproger.com">
+  <p>Сразу большой текст как <b>ссылка</b></p>
+</a>
+<a href="#up">Наверх</a>
+<a name="up"></a> <!-- лучше расположить где-либо в верху страницы -->
+
+<!-- 8) Отображение изображений -->
+<img src="https://itproger.com/img/intensivs/front-end.jpg">
+<img src="https://itproger.com/img/intensivs/front-end.jpg" alt="Онлайн курс" title="Изображение курса" width="200px" height="100px">
+<img src="/some_error.jpg" alt="Пример работы alt">
+<img src="img/some_error.jpg" alt="Отображение фото с компьютера">
+
+<!-- 9) Таблицы -->
+<table border="1" cellpadding="10" cellspacing="10">
+   <caption>Таблица пользователей</caption>
+   <thead>
+     <tr>
+       <td>Имя</td>
+       <td>Фамилия</td>
+       <td>Возраст</td>
+     </tr>
+   </thead>
+   <tr>
+	   <td>Игорь</td>
+	   <td>Матвиенко</td>
+	   <td>36</td>
+	</tr>
+   <tr>
+	   <td>Алексей</td>
+	   <td>Мельников</td>
+	   <td>25</td>
+	</tr>
+   <tr>
+	   <td>Василий</td>
+	   <td>Волков</td>
+	   <td>30</td>
+	</tr>
+  <tfoot>
+    <tr>
+      <td colspan="3">Итого 3 человека</td>
+    </tr>
+  </tfoot>
+</table>
+
+<!-- 10) Div, Span -->
+<!-- Преимущества div и span раскрываются при работе с CSS -->
+<div>блок</div>
+<span>строчный объект</span>
+
+<!-- 11) Формы для ввода информации -->
+<form action="" method="POST" name="reg_form">
+  <label for="name">Имя</label>
+  <input type="text" name="name" id="name" width="300px" placeholder="Введите имя" required><br>
+
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email" width="300px" placeholder="Введите имя" value="some@mail.ru" disabled><br>
+
+  <label for="person">Выберите ваш пол</label><br>
+	<input type="radio" name="person" id="person" value="male" checked>
+	<label>Мужчина</label>
+	<input type="radio" name="person" id="person" value="female">
+	<label>Женщина</label><br>
+
+  <label for="phone">Телефон</label>
+  <input type="tel" name="phone" id="phone" width="300px" placeholder="Введите телефон" required><br>
+
+  <label for="birth">Дата рождения</label>
+  <input type="date" name="birth" id="birth" required><br> <!-- Также есть datetime -->
+
+	<label>Ваш любимый цвет</label><br>
+	<input type="color" id="color"><br>
+
+  <label for="age">Возраст</label>
+  <input type="number" name="age" id="age" min="0" max="100" required><br>
+
+  <label for="bio">Биография</label><br>
+  <textarea name="bio" id="bio" width="300px" height="200px" placeholder="Пример текста"></textarea>
+  <!-- rows="8" cols="80" --><br>
+
+	<input type="submit" value="Отправить">
+	<input type="reset" value="Очистить">
+</form>
+
+<!-- 12) Селекторы выбора -->
+<select name="cars">
+	<option disabled="disabled">Какая марка автомобиля нравиться?</option>
+	<option value="audi">Audi</option>
+	<option value="rolls_royce" selected="selected">Rolls Royce</option>
+	<option value="bmw">BMW</option>
+	<option value="other">Другая</option>
+</select>
+<br>
+<select name="tags" multiple="multiple">
+	<option disabled="disabled">Выберите автомобиль:</option>
+	<option value="bmw">BMW</option>
+	<option value="audi">Audi</option>
+	<option value="Benz">Mercedes</option>
+</select>
+
+<!-- 13) Встраевание данных -->
+<embed src="https://itproger.com" width="500px" height="500px"></embed>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sjzoCz5lGCA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<!-- 14) HTML5 теги -->
+<header>
+  <nav>Навигация</nav>
+</header>
+<main>
+  <article>
+    <audio controls>
+        <source src="http://goldenland.onfind.net/2/1/2.mp3" type="audio/ogg; codecs=vorbis">
+        Тег audio не работает в вашем браузере!
+    </audio>
+    <section>
+      Просто секция сайта
+      <details>Здесь находиться скрытый текст.</details>
+      <input list="some_id">
+      <datalist id="some_id">
+          <option value="Audi">
+          <option value="BMW">
+          <option value="Shkoda">
+          <option value="Porshe">
+      </datalist>
+    </section>
+  </article>
+  <aside>
+    Боковая часть сайта
+  </aside>
+</main>
+<footer>
+  Футер сайта
+</footer>

@@ -1,0 +1,29 @@
+#1 открытие файла и запись данных в ф.
+# file = open('data/text.txt', 'w') #w - перезаписывает данные
+# file.write('hello\n')
+# file.write('!!!')
+# file.close()
+
+# file = open('data/text.txt', 'a') #a - append (добавляет инф.)
+# file.write('\nhello\n')
+# file.write('!!!')
+# file.close()
+
+
+
+#2 пользовательские данные
+# data = input("введите текст: ")
+# file = open('data/text.txt', 'a')
+# file.write(data + '\n')
+# file.close()
+
+
+#3 Считывание данных
+file = open('data/text.txt', 'r')
+
+#print(file.read()) # считывает всё
+
+for line in file: # считывает построчно
+    print(line, end="") #энд чтобы не считывались лишние пробелы
+
+file.close()

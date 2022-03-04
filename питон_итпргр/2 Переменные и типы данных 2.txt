@@ -1,0 +1,19 @@
+num1 = int(input("Введите первое чило: "))
+
+num2 = int(input("Введите второе чило: "))
+
+num1 = num1 + 5
+num1 += 5
+
+print("Result:", num1 + num2)
+print("Result:", num1 - num2)
+print("Result:", num1 / num2)
+print("Result:", num1 * num2)
+print("Result:", num1 // num2)
+print("Result:", num1 ** num2)
+
+word = 'hi' # str
+print(word * 2)
+
+del word
+word = 45

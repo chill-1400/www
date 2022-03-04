@@ -1,0 +1,29 @@
+* {
+  background-color: tomato;
+  text-shadow: 1px 1px 2px;
+  color: #fff;
+}
+
+#canvas {
+  border: 15px solid #800000
+}
+
+button {
+  border-radius: 5px;
+  border: 0;
+  background: DarkRed;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 600ms ease;
+}
+
+button:hover {background: #333}
+
+#error:not(:empty) {
+  margin-bottom: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #e06149;
+}

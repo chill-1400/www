@@ -1,0 +1,43 @@
+							html файл
+
+<!--1) <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML + CSS</title>
+</head>
+<body> "атрибут style"
+  <p style="color: red;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur quidem rerum soluta <b>animi</b> explicabo quae, fugiat perferendis pariatur id eveniet, sapiente veniam est ipsa magnam maiores sequi ratione sunt esse!</p>
+</body>
+</html>          лучше так не делать-->
+
+
+2) и 3) вариант
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML + CSS</title>
+  <link rel="stylesheet" href="css/main.css">
+  <!--<style> отдельный тег style
+    b {
+      color: red
+    }
+  </style>-->
+</head>
+<body>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur quidem rerum soluta <b>animi</b> explicabo quae, fugiat <b>perferendis pariatur id eveniet, sapiente veniam est</b> ipsa magnam maiores sequi ratione sunt esse!</p>
+</body>
+
+
+							css файл в 3-ем варианте доб. стилей
+
+body {
+  color: orange;
+}
+

@@ -1,0 +1,79 @@
+штмл файл
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML + CSS</title>
+</head>
+<body>
+  <a href="#" class="main_link">Cсылкаоченьдлинная</a>
+
+  <p class="text">Simple</p>
+  <p class="text" title="some text"></p>
+
+  <div id="some id">Some text</div>
+
+  <input type="text" placeholder="vvedite text" required>
+
+  <p class="main_link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <p class="text">Simple</p>
+    
+</body>
+</html>
+
+
+
+сиэсэс файл
+
+
+p.text:not(:empty) {
+  color: grey;
+}
+
+p.text:not(:empty)::after {
+  content: attr(title);
+}
+
+#some_id::before{
+  content: '123';
+}
+
+p.main_link::first-letter {
+  color: green;
+}
+
+p:last-of-type {
+  text-decoration: line-through;
+}
+
+.main_link {
+  color: red;
+  text-decoration: none;
+}
+
+/*работа с псевдоклассами*/
+.main_link:hover {
+  color: green;
+  text-decoration: underline;
+  text-decoration-color: blue;
+  cursor: pointer;
+}
+
+.main_link:active {
+  text-decoration: line-through;
+}
+
+.main_link:visited {
+  text-decoration: line-through;
+  color: grey;
+}
+
+input:required {}
+input {color: blue}
+input:focus{color: red}
+
+

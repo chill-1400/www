@@ -1,0 +1,58 @@
+<!-- наследуем шаблон base -->
+{% extends 'blog/base.html' %}
+
+{% block title %}
+  {{ title }}
+{% endblock %}
+
+{% block style %}
+  <style type="text/css">
+
+    a.blank{
+      margin-left: 30%
+    }
+
+    .form-register {
+      max-width: 100%;
+      padding: 20px;
+      background: #fafafa;
+      border: 1px solid silver;
+      border-radius: 20px;
+      width: 100%;
+      margin-top: 30px;
+      margin-left: 0%;
+      margin-right: 0%;
+      margin-bottom: 5%;
+    }
+
+  </style>
+{% endblock %}
+
+{% block content %}
+  <center><h1>{{ title }}</h1></center>
+  <!-- метод POST- значит "отправлять" -->
+  <form method="post" class="form-register auth">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <center><button class="btn btn-outline-warning" type="submit">Отправить<i class="fas fa-arrow-right"></i></button></center>
+  </form>
+{% endblock %}
+
+{% block aside_block %}
+  <aside class="col-md-4 mt-3 ml-2">
+    <center><h4 class="mt-2"> Интересные статьи:</h4></center>
+    <img src="https://itproger.com/img/news/1589893627.jpg" class="img-thumbnail">
+    <p>Для многих Python - это язык для написания веб проектов, машинного обучения или для анализа данных. На самом деле он более функционален и в этой статье мы вам это докажем.</p>
+
+    <a href="https://itproger.com/news/285" target="_blank">
+      <button class="btn btn-warning">Посмотреть<i class="fas fa-arrow-right"></i></button>
+    </a>
+
+    <img src="https://itproger.com/img/news/1591879929.jpg" class="img-thumbnail mt-4">
+    <p>Уже не первый год слышно много положительных отзывов про движок Godot. Пришло время узнать больше об этом движке и выяснить почему он столь популярен.</p>
+
+    <a href="https://itproger.com/news/285" target="_blank">
+      <button class="btn btn-warning">Посмотреть<i class="fas fa-arrow-right"></i></button>
+    </a>
+  </aside>
+{% endblock %}

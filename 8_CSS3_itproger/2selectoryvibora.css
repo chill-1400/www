@@ -1,0 +1,64 @@
+/* 1 стили для всего и стили для параграфа */
+/* * {
+  color: orange;
+  background-color: black;
+}
+
+p {color: green; background-color: silver;} */
+
+
+/*1.2 Для класса - хеадинг цвет текста б. розовый */
+/* .heading {color: pink}
+
+/*1.3 Для id:block-text цвет текста б. фиолетовый */
+/* #block-text {color: purple}
+
+/*1.4 из за приоритетности стиль:
+h1 {color: brown}
+не сработает
+поэтому нужно писать так:*/
+
+/* h1.heading {color: brown}
+/*тут мы взяли все заголовки h1, у которых есть класс heading */
+
+/*1.5 Cтили для div*/
+/* div p {
+  color: blue;
+}
+
+div#block-text * {
+  color: yellow;
+}
+
+div#block-text .heading {
+  color: purple;
+} */
+
+
+
+/*перед 2 пунктом мы закоментировали 1 пункт  */
+
+/*2 Мультиклассы(сразу несколько обьектов) */
+/* p, h1, h3, .heading, #block-text2 *{
+  color: red
+} */
+
+
+
+/*перед 3 пунктом мы закоментировали 2 пункт  */
+
+/*3 Добавление стилей к em, у которых предыдущий элемент b  */
+p.txt b + em {color: red}
+
+/*4 укажем жирность шрифта болд*/
+.bold {font-weight: bold}
+
+/*4 к нашему параграфу  добавим синий цвет(мультиклассы)*/
+p.txt.bold {color: blue}
+
+
+/*5 Дочерние селекторы >*/
+ul > li {color: red}
+
+/* 6 выберем только те ссылки у кот. есть атрибут таргет(сделаем жирными) */
+a[target] {font-weight: normal}

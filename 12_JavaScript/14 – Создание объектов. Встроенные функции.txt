@@ -1,0 +1,56 @@
+//1 работа с датой в js
+
+// var date = new Date();
+
+// console.log(date.getFullYear());
+// console.log(date.getMonth() + 1);
+// console.log(date.getDate());
+// console.log(date.getHours());
+// console.log(date.getMinutes());
+// console.log(date.getSeconds());
+
+//самдоеятельн установка времени
+// date.setHours(13);
+// date.setMinutes(13);
+//
+// console.log("time: " + date.getHours() + ":" + date.getMinutes());
+
+
+
+
+//2 специальные функции для массивов
+//
+// var arr = [5, 7, 8, 9];
+// var stroka = arr.reverse().join(", ");
+//console.log(arr.length); // подсчитывания длины массива
+//console.log(arr.join(", "));//вывести масс как строку с разделителем
+// console.log(arr.sort());
+// console.log(arr.reverse().join("-- "));
+
+
+// console.log(stroka.split(", "));
+
+
+
+
+//3 создание класса
+class Person {
+  constructor(name, age, hungry) {
+    this.name = name;
+    this.age = age;
+    this.hungry = hungry;
+  }
+  info(){
+    console.log("human: " + this.name + "  Age: " + this.age);
+  }
+}
+
+
+var alex = new Person('Alex', 45, true);
+var bob = new Person('bob', 49, false);
+alex.name = "noAlex";
+// console.log(alex.age);
+// console.log(alex.age );
+
+alex.info();
+bob.info();

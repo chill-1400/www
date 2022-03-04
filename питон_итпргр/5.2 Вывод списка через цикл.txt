@@ -1,0 +1,19 @@
+#1 вывод списка через цикл
+# nums = [5, 2, 7, "50", False]
+#
+# for el in nums:
+#     el *= 2
+#     print(el)
+
+#2 Наполнение списка пользователем
+n = int(input("enter length: ")) # польз. вводит длину списка
+
+user_lists = []
+
+i=0
+while i < n:
+    string = "enter element №"+ str(i + 1) + ": "
+    user_lists.append(input(string))
+    i += 1
+
+print(user_lists)

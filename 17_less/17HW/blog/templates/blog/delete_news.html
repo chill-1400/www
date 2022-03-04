@@ -1,0 +1,80 @@
+<!-- наследуем шаблон base -->
+{% extends 'blog/base.html' %}
+
+{% block title %}
+  Удаление статьи
+{% endblock %}
+
+{% block style %}
+  <style type="text/css">
+    body {
+      text-align: center;
+    }
+
+    .form-register {
+      max-width: 100%;
+      padding: 20px;
+      background: #fafafa;
+      border: 1px solid silver;
+      border-radius: 20px;
+      width: 100%;
+      margin-top: 30px;
+      margin-left: 0%;
+      margin-right: 0%;
+      margin-bottom: 5%;
+    }
+
+    .btn,
+    button {
+      padding: 15px 25px;
+      border-radius: 5px;
+      border: 0;
+      font-size: 14px;
+      cursor: pointer;
+      background: #ffc107;
+      color: #704404;
+      font-weight: 500;
+      transition: background 600ms ease;
+    }
+
+    a.btn_3 button {
+      background: #CD5C5C;
+      padding: 15px 25px;
+    }
+
+    a.btn_3 button:hover {
+      background: #F08080;
+    }
+
+  </style>
+{% endblock %}
+
+{% block content %}
+  <h1>Вы точно хотите удалить статью "{{ object.title }}"?</h1>
+  <!-- метод POST- значит "отправлять" -->
+  <form method="post" class="form-register auth">
+    {% csrf_token %}
+    <button class="btn btn" type="submit">Да, удалить</button>
+    <a href="{% url 'news-detail' object.id %}" class="btn_3"><button class="btn">Нет, отмена</button></a>
+  </form>
+
+{% endblock %}
+
+{% block aside_block %}
+  <aside class="col-md-4 mt-3 ml-2">
+    <center><h4 class="mt-2"> Интересные статьи:</h4></center>
+    <img src="https://itproger.com/img/news/1589893627.jpg" class="img-thumbnail">
+    <p>Для многих Python - это язык для написания веб проектов, машинного обучения или для анализа данных. На самом деле он более функционален и в этой статье мы вам это докажем.</p>
+
+    <a href="https://itproger.com/news/285" target="_blank">
+      <button class="btn btn-warning">Посмотреть<i class="fas fa-arrow-right"></i></button>
+    </a>
+
+    <img src="https://itproger.com/img/news/1591879929.jpg" class="img-thumbnail mt-4">
+    <p>Уже не первый год слышно много положительных отзывов про движок Godot. Пришло время узнать больше об этом движке и выяснить почему он столь популярен.</p>
+
+    <a href="https://itproger.com/news/285" target="_blank">
+      <button class="btn btn-warning">Посмотреть<i class="fas fa-arrow-right"></i></button>
+    </a>
+  </aside>
+{% endblock %}

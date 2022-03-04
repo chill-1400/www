@@ -1,0 +1,10 @@
+.test {
+  background: silver;
+  border: 2px solid silver;
+  padding: 20px;
+}
+
+#block {
+  width: 100px;
+  background: silver;
+}

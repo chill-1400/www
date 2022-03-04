@@ -1,0 +1,70 @@
+* {
+  background-color: black;
+  color: white}
+/*1 добавим стиль к первому эл-ту(параграфу) блока*/
+#block p:first-of-type {
+  color: red
+}
+
+/*1.1 добавим стиль к последнему эл-ту(тип неважен) блока*/
+#block :last-child {
+  color: orange
+}
+
+
+/*2 выберем все блоки, все обзацы- цвет делаем красный*/
+.block p {color: red}
+
+/*2.1 выберем единственный обьект в своём родительском элементе  */
+.block :only-of-type {color: blue}
+
+
+/*3 псевдоклассы для ссылок*/
+/*text-decoration: none позволяет удалить подчёркивание */
+/* :link, :visited, :active - псевдокласс */
+a:link {text-decoration: none}
+a:visited {color: yellow}
+
+/* :active срабатывает "при нажатии" на любой обьект (парагрф, заголовок) */
+a:active {text-decoration: line-through}
+
+/*:hover эффект при наведении на любой обьект (парагрф, заголовок...)*/
+a:hover {color: orange; font-weight: bold}
+
+
+.block-txt span {color: pink}
+/*при наведен. на весь обьект б. применятся стили к параграфам в об*/
+.block-txt:hover span {color: red}
+.block-txt span:active {color: green}
+/*span на всю ширину экрана */
+
+
+/*4 рассмотрим псевдокласс empty*/
+p:not(:empty) {
+  background-color: brown;
+  /* height: 10px; */
+  }
+/*здесь мы выбрали не пустые параграфы и изменили фон*/
+
+p:not(.txt):not(.txt-block) {color: cyan}
+p:not(.txt):not(.txt-block):hover {color: deepskyblue}
+
+input[type]:not([type="text"]):not(:focus) {background-color: darkred}
+input:focus {background-color: darkblue}
+
+input:enabled {background-color: darkgreen}
+input:disabled {background-color: lightpink}
+
+
+/* 5 cпомощью псевдоклассов возб=ьмём лишь четные эл-ты из списка */
+#list li:nth-child(2n) {color: red}
+
+body :first-child::first-letter {
+  color: lightgreen
+}
+
+  /*6 псевдоэлементы - они позволяют нам работать с какой-то частью обьекта*/
+.after-before::after {
+  content: "!";
+  color:red
+}

@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Тестовая страница">
+    <title>Работа с формами</title>
+  </head>
+  <body>
+
+    <!-- 11) Формы для ввода информации -->
+    <form action="" method="POST" name="reg_form">
+      <label for="name">Имя</label>
+      <input type="text" name="name" id="name" width="300px" placeholder="Введите имя" required><br>
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" width="300px" placeholder="Введите имя" value="some@mail.ru" disabled><br>
+
+      <label for="person">Выберите ваш пол</label><br>
+    	<input type="radio" name="person" id="person" value="male" checked>
+    	<label>Мужчина</label>
+    	<input type="radio" name="person" id="person" value="female">
+    	<label>Женщина</label><br>
+
+      <label for="phone">Телефон</label>
+      <input type="tel" name="phone" id="phone" width="300px" placeholder="Введите телефон" required><br>
+
+      <label for="birth">Дата рождения</label>
+      <input type="date" name="birth" id="birth" required><br> <!-- Также есть datetime -->
+
+    	<label>Ваш любимый цвет</label><br>
+    	<input type="color" id="color"><br>
+
+      <label for="age">Возраст</label>
+      <input type="number" name="age" id="age" min="0" max="100" required><br>
+
+      <label for="bio">Биография</label><br>
+      <textarea name="bio" id="bio" width="300px" height="200px" placeholder="Пример текста"></textarea>
+      <!-- rows="8" cols="80" --><br>
+
+    	<input type="submit" value="Отправить">
+    	<input type="reset" value="Очистить">
+    </form>
+
+    <!-- 12) Селекторы выбора -->
+    <select name="cars">
+    	<option disabled="disabled">Какая марка автомобиля нравиться?</option>
+    	<option value="audi">Audi</option>
+    	<option value="rolls_royce" selected="selected">Rolls Royce</option>
+    	<option value="bmw">BMW</option>
+    	<option value="other">Другая</option>
+    </select>
+    <br>
+    <select name="tags" multiple="multiple">
+    	<option disabled="disabled">Выберите автомобиль:</option>
+    	<option value="bmw">BMW</option>
+    	<option value="audi">Audi</option>
+    	<option value="Benz">Mercedes</option>
+    </select>
+
+
+  </body>
+</html>

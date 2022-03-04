@@ -1,0 +1,20 @@
+.block {
+  width: 200px;
+  height: 200px;
+}
+
+#first {
+	background: #e56868;
+	position: relative;
+  z-index: 1;
+}
+
+#second {
+	background: #6db8e3;
+	position: relative;
+	top: -50px;
+	right: -50px;
+  z-index: 0;
+}
+
+/* z-index - приоритет (слои)(применяется при position: relative;)*/

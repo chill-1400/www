@@ -1,0 +1,372 @@
+<!-- Лекция №2 -->
+
+<!-- 1) Три способа написания стилей -->
+<style>
+ /* CSS тег style */
+</style>
+
+<!-- Атрибут style -->
+<div style="padding: 20px; background: red"></div>
+
+<!-- Самый удобный и верный варинат - использование дополнительных файлов -->
+<link rel="stylesheet" href="css/main.css">
+
+<!-- 2) Из чего состоит CSS правило -->
+<!--
+  Каждое CSS выражение состоит из базовой структуры:
+  селектор { свойство: значение; }
+-->
+
+<!-- 3) ID, класс и выборка всего -->
+<!--
+  Дабы присвоить значения к элементам и объектам, необходимо их изначально выбрать.
+  Элементы можно выбирать по ID, классу, тегу, различным конструкциям, а также можно выбрать сразу все элементы
+
+  ID элемента всегда должен быть лишь один на странице:
+  #idElement {}
+  Классы могут повторяться и их можно прописать под множество элементов на странице:
+  .classElement {}
+  Для выборки всех элементов по какому-либо тегу, можно прописать название самого тега:
+  div {}
+  Для выборки всех элементов на странице можно использовать символ *:
+  * {}
+-->
+
+<!-- 4) Google Fonts -->
+<!--
+  Шрифты можно подключать как с компьютера, просто поместив их в папку и далее подключив в CSS,
+  так и со специальных сервисов. Пример Google Fonts - https://fonts.google.com/
+  Подключения шрифта возможно при помощи: @import или же <link href="font" rel="stylesheet">
+-->
+
+<!-- 5) Стили для текста, ссылок и изображений -->
+<style>
+  .simple_text {
+    color: #333;
+    cursor: pointer;
+    border: 2px solid #333;
+    display: block;
+    font-family: Times, sans-serif; /* Также можно подключить шрифт из Google Fonts */
+  }
+
+  #bigText {
+    font-size: 2em;
+    font-weight: bold; /* Если прописать !important, то текст в span все равно будет жирным */
+    text-align: center;
+  }
+
+  #light_text {font-weight: light;} /* можно прописать initial, это будет значение по умолчанию */
+
+  a {
+    text-decoration: none;
+    color: #BC3F33;
+  }
+</style>
+
+<span class="simple_text">Простой текст</span>
+<div id="bigText">Большой <span id="light_text">текст</span></div>
+<a href="https://itproger.com">itProger</a>
+
+<!-- 6) Выборка элементов -->
+<style>
+/* Вложенные селекторы */
+#example em {
+	color: #cc4d4d;
+}
+
+/* Выборка по атрибуту */
+a[target="_blank"] {
+	color: #ccc051;
+}
+
+/* Дочерние селекторы */
+#example>i {
+	color: #ccc051;
+}
+
+/* Мультиклассы */
+.paddBox {
+   padding: 1%;
+   width: 98%;
+}
+
+.paddBox.light {
+   background: #91cfd4;
+}
+
+.paddBox.green {
+   background: #91d4a2;
+}
+
+/* Соседние селекторы */
+b + i {
+   color: #ccc051;
+}
+</style>
+
+<!-- Вложенные селекторы -->
+<div id="example">Lorem ipsum <em>dolor</em> sit amet, consectetur adipisicing <em>elit</em>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+<em>А вот здесь стилей нет!</em>
+
+<!-- Выборка по атрибуту -->
+<a href="#" target="_blank">Target Black</a>
+<br>
+<a href="#">Обычная ссылка</a>
+
+<!-- Дочерние селекторы -->
+<p id="example">
+	Lorem ipsum dolor sit amet, <i>consectetur</i> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <i>Ut</i> enim ad minim veniam, <i>quis</i> nostrud exercitation ullamco laboris nisi ut aliquip <i>ex ea</i> commodo consequat.
+	<div>
+		Lorem <i>ipsum</i> dolor sit amet.
+	</div>
+</p>
+
+<!-- Мультиклассы -->
+<div class="paddBox light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+<div class="paddBox green">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+<div class="paddBox">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+
+<!-- Соседние селекторы -->
+<p>
+	Lorem <b>ipsum dolor</b> sit amet, <i>consectetur</i> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <i>Ut</i> enim <b>ad</b> minim veniam, <i>quis</i> nostrud <b>exercitation</b> ullamco <i>laboris</i> nisi ut aliquip <i>ex ea</i> commodo consequat.
+</p>
+
+<!-- 7) Псевдоклассы и элементы -->
+<style>
+/* :empty */
+span:empty {
+  padding: 1%;
+  width: 98%;
+  background: #aacfd6;
+  display: inline-block;
+}
+
+/* :not */
+input:not([type="button"]) {
+    border: 2px solid silver;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+/* Наведение и работа с ссылкой */
+#link:hover {
+   color: #d38e8e;
+   text-decoration: underline;
+}
+
+#link:active {
+   color: #d38e8e;
+}
+
+#link:visited {
+   color: #d38e8e;
+   text-decoration: underline;
+}
+
+/* Выборка последних и первых элементов */
+.example>p:last-of-type {
+    background-color: #ab9898;
+    padding: 10px;
+}
+
+.example>p:first-of-type {
+    background-color: #ab9898;
+    padding: 10px;
+}
+
+.example_2 :first-child {
+	background-color: #9bab98;
+}
+.example_2 :last-child {
+    background-color: #ab9898;
+}
+
+.example p::first-letter {
+   color: #d38e8e;
+   font-size: 1.2em;
+}
+
+.example p::first-line {
+   color: #d38e8e;
+   font-size: 1.2em;
+}
+
+/* ::after и ::before */
+#block::after {
+   content: 'Плюс дополнение!';
+   color: #84afdd;
+   display: block;
+}
+
+#block::before {
+   content: 'Плюс дополнение!';
+   color: red;
+   display: block;
+}
+</style>
+
+<!-- :empty -->
+<span></span>
+<span>-</span>
+<span></span>
+
+<!-- :not -->
+<form>
+   Ваше имя: <input name="user"><br>
+   Email: <input name="user"><br>
+   <input type="button" value="Отправить">
+</form>
+
+<!-- Наведение и работа с ссылкой -->
+<a id="link" href="#">Ссылка</a>
+
+<!-- Выборка последних и первых элементов -->
+<div class="example">
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+   <p>-------</p>
+   <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+<div class="example_2">
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+   <div>-------</div>
+   <span>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+</div>
+
+<!-- ::after и ::before -->
+<div id="block">
+	Обычный текст
+</div>
+
+<!-- 8) Блок с задним фоном картинкой -->
+<style>
+#mainBG {
+  width: 100%;
+  overflow: hidden;
+  background-image: url('https://itproger.com/img/website/bg.jpg');
+  background-color: #1e1e21;
+  background-size: cover;
+  background-blend-mode: overlay , color;
+  background-attachment: fixed;
+  height: 300px;
+}
+</style>
+
+<div id="mainBG"></div>
+
+<!-- 9) Стили для блоков  -->
+<style>
+.block {
+  width: 100%;
+  height: 300px;
+  margin: 20px;
+  padding: 20px;
+  background: #1e1e21;
+  border-radius: 7px;
+  max-width: 700px; /* Также существует min-width, max-height и min-height */
+}
+</style>
+
+<div class="block"></div>
+
+<!-- 10) Позиционирование блоков -->
+<style>
+div.block:first-of-type {
+  float: left;
+  clear: right;
+
+  /*
+    Также можно позиционировать при помощи position:
+     position: static; - Значение по-умолчанию
+
+     position: fixed; - Зафиксированный блок при прокрутке
+     top: 10px; / right: 200px
+     left: 200px; / bottom: 100px
+  */
+
+}
+
+div.block:last-of-type {
+  float: left;
+}
+
+.position_block {
+  position: relative;
+  top: 200px;
+  left: -20px;
+}
+
+.absolute_block {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+}
+</style>
+
+<div class="block"></div>
+<div class="block"></div>
+
+<div class="position_block">
+  <div class="absolute_block">Просто текст</div>
+</div>
+
+<!-- 11) Слои в CSS -->
+<style>
+#first {
+	background: #e56868;
+	width: 100px;
+	height: 100px;
+	position: relative;
+}
+
+#second {
+	background: #6db8e3;
+	width: 100px;
+	height: 100px;
+	position: relative;
+	top: -50px;
+	right: -50px;
+}
+</style>
+
+<div id="first"></div>
+<div id="second"></div>
+
+<!-- 12) Стили для списков -->
+
+<style>
+#navbar {
+	height: 30px;
+	background-color: #805656;
+	padding-left: 0;
+	float: left;
+}
+
+#navbar * {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#navbar li {
+	float: left;
+}
+
+#navbar li a {
+	display: block;
+	padding: 6px;
+	width: 100px;
+	color: #ebebeb;
+	text-decoration: none;
+	text-align: center;
+}
+
+#navbar li:hover { background-color: #501d0b; }
+</style>
+
+<ul id="navbar">
+  <li><a href="#">Главная</a></li>
+  <li><a href="#">Новости</a></li>
+  <li><a href="#">Контакты</a></li>
+  <li><a href="#">О нас</a></li>
+</ul>

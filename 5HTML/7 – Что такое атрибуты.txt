@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  </head>
+  <body>
+    <!--<p title="etot atribut est' y vseh tegov">title</p>
+    <ol start="etot atribut tol'ko tyt y spiskov ol">
+      ol
+    </ol> -->
+    <p title="live">Some text</p>
+  </body>
+</html>

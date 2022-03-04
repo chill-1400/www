@@ -1,0 +1,70 @@
+* {
+  background-color: #333;
+  color: white;
+}
+
+p {
+  margin-top: 80px
+}
+
+#app {
+  text-align: center;
+  background-color: #5498c9;
+}
+
+.container {
+  margin: 40px;
+  padding: 0;
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  border: 1px solid #FFE4E1;
+  background: #3CB371;
+  align-items: center;
+}
+
+.animBlock {
+	margin: 0px;
+  width: 200px;
+	height: 200px;
+	background: #3CB371;
+	transition: all 1s ease-in-out;
+}
+
+
+.animBlock {
+  align-self: center;
+  border-radius: 5px;
+  background: #5498c9;
+  position: relative;
+  -webkit-animation-name: moving; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: moving;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite; /* количество повторений */
+  animation-direction: alternate;
+}
+
+.animBlock:hover {
+  -webkit-box-shadow: 22px 10px 5px 0px rgba(0,0,0,0.42);
+  -moz-box-shadow: 22px 10px 5px 0px rgba(0,0,0,0.42);
+  box-shadow: 22px 10px 5px 0px rgba(0,0,0,0.42);
+  border: 2px solid #772b2b;
+  opacity: 0.9;
+}
+
+/* Для Safari */
+@-webkit-keyframes gradientBlock {
+  from {background-color: #FF8C00}
+  to {background-color: #8A2BE2}
+}
+
+/* Стандартный синтаксис */
+@keyframes gradientBlock {
+  from {background-color: #FF8C00}
+  to {background-color: #8A2BE2}
+}

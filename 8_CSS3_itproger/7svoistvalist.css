@@ -1,0 +1,22 @@
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  display: inline-block;
+  background: #fcfcfc;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid silver;
+  cursor: pointer;
+}
+
+ul li:hover {
+  background-color: #333;
+  color: #fff;
+  -webkit-box-shadow: 5px 12px 24px -7px rgba(0,0,0,1);
+  -moz-box-shadow: 5px 12px 24px -7px rgba(0,0,0,1);
+  box-shadow: 5px 12px 24px -7px rgba(0,0,0,1);
+}

@@ -1,0 +1,36 @@
+штмл файл
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML + CSS</title>
+  <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+  <p id="text-in-p">Lorem ipsum dolor<i class="main-text"> sit amet, consectetur </i>adipisicing elit. Tenetur quidem rerum soluta <b class="main-text">animi</b> explicabo quae, fugiat <b id="bold-text-in-p">perferendis pariatur id eveniet, sapiente veniam est</b> ipsa magnam maiores sequi ratione sunt esse!</p>
+
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor <b>incididunt</b> ut labore et dolore magna aliqua. Ut enim ad minim veniam ullamco <i>laboris<i> nisi ut aliquip ex ea commodo consequat..</p>
+  </div>
+</body>
+</html>
+
+
+сиэсэс файл
+
+.main-text {
+  color: orange;
+}
+/*селектор выбора по классу*/
+#text-in-p {
+  color: green;
+}
+/*селектор выбора по идентификатору*/
+div p b, div i {
+  color: blue;
+}
+/*комбинирование вложенных селекторов выбора*/

@@ -1,0 +1,31 @@
+:root {
+  --main-color: blue;
+  --main-font-size: 25px;
+}
+
+body {
+  font-size: 14px;
+  /* background: url(); */
+}
+
+.menu__link {
+  color: red;
+  width: calc(100% - 40px);
+  padding: 20px;
+}
+
+.menu__link--active {
+  color: var(--main-color);
+  font-size: var(--main-font-size);
+}
+
+.menu__link--deactive {
+  color: var(--main-color);
+  font-size: var(--main-font-size);
+  cursor: default;
+}
+
+
+
+/*все переменные зачастую записываются внутри псевдоэлемента root  */
+/*root говорит о том, что мы создаём нечто, что б. принадл. всему документу */

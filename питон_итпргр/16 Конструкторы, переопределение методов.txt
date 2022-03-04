@@ -1,0 +1,32 @@
+#1 Создание класса и обьектов
+class Cat:
+    name = None
+    age = None
+    isHappy = None
+
+#2 Создание Конструктора
+    def __init__(self, name = None, age = None, isHappy = None): #
+        # self.name = name
+        # self.age = age
+        # self.isHappy = isHappy
+        self.set_data(name, age, isHappy)
+        self.get_data()
+
+    def set_data(self, name = None, age = None, isHappy = None): #в классах функции называются методами
+        self.name = name
+        self.age = age
+        self.isHappy = isHappy
+
+    def get_data(self):
+        print(self.name, "age:", self.age, ". Happy:", self.isHappy)
+
+
+cat1 = Cat('Barsik', 3, True) #объект
+cat1.set_data('jony', 4, True)
+
+cat2 = Cat()
+# cat2.set_data('jopen', 2, False)
+
+
+# cat1.get_data()
+# cat2.get_data()

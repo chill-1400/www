@@ -1,0 +1,16 @@
+number = 5 # int
+
+dig = 4.1323 # float
+word = 'result: ' # string
+boolean = True # bool
+
+str_num = '5' # str
+
+# print(word + str(boolean))
+
+print(word + str(number + int(str_num)))
+
+del number
+
+number = 7
+print("result: ", number)

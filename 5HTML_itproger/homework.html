@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Тестовая страница">
+    <title>Мини веб сайт</title>
+  </head>
+  <body style="background-color: #FFFFE0">
+    <h1><center>Мини веб сайт</center></h1>
+    <table style="width:65%; border-collapse: collapse;">
+    <tbody>
+      <tr>
+        <td>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Galunggung.jpg" alt="Онлайн сайт" title="Изображение молнии" width="560px" height="400px">
+        </td>
+        <td>
+          <h3>Информация про <mark>изображение</mark>:</h3>
+          <hr>
+          <details>
+           <summary>Подробнее</summary>
+           <p>Удар молнии во время извержения большого вулкана.<br> <address>Галунггунг, Западная Ява, 1982 год.</address></p>
+         </details><br>
+          <audio controls>
+              <source src="http://goldenland.onfind.net/2/1/2.mp3" type="audio/ogg; codecs=vorbis">
+          </audio>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <embed width="560" height="315" src="https://www.youtube.com/embed/sjzoCz5lGCA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></embed>
+        </td>
+
+        <td>
+          <h3>Наши преимущества:</h3>
+          <ul>
+            <li >Крутые <a href="https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BD%D0%B0" title="определение" target="_blank">цены</a></li>
+            <li>Хороший выбор</li>
+            <li>Опытные специалисты</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+    <h2>Зарегистрироваться на событие:</h2>
+      <form action="" method="post" accept-charset="utf-8">
+      	<label for="name">Имя</label>
+      	<input id="name" type="text" name="name" placeholder="Введите имя"><br><br>
+      	<label for="email">Email</label>
+      	<input id="email" type="email" name="email" placeholder="Введите email"><br><br>
+      	<label for="pass">Пароль</label>
+      	<input id="pass" type="password" name="pass" placeholder="Пароль">
+        <form enctype="multipart/form-data" method="post">
+         <p>Фото профиля<input type="file" name="f"></p>
+
+        <input list="experience" placeholder="Опыт в программировании">
+        <datalist id="experience">
+          <option disabled>Опыт в программировании</option>
+        	<option value="1 year">1 год</option>
+        	<option value="2-3 years">2-3 года</option>
+        	<option value="4 years">4 года</option>
+        	<option value="Over 5 years">Более 5 лет</option>
+        </datalist>
+        </input><br><br>
+
+        <select name="programming language">
+          	<option disabled="disabled" selected="selected">Любимый язык</option>
+          	<option value="Python">Python</option>
+          	<option value="Perl">Perl</option>
+          	<option value="C#">C#</option>
+          	<option value="Scala">Scala</option>
+        </select><br><br>
+
+      	<input type="checkbox" id="rights" name="rights" checked="checked">
+      	<a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%BE%D0%B5_%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%88%D0%B5%D0%BD%D0%B8%D0%B5" title="Посмотреть" target="_blank">Пользовательское соглашение</a><br><br>
+      	<button type="submit" name="button">Отправить</button>
+      	<button type="reset" name="button">Очистить</button>
+      </form>
+  </body>
+</html>

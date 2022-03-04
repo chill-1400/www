@@ -1,0 +1,7 @@
+# Comment
+print("result: ", min(1, 2, 3), max(1, 2, 3))
+print("result: ", abs(-5), pow(5, 3), round(5 / 3))
+# print("Hello itProger")
+#print("result: ", 7, 15, sep="", end="!\n")
+#print("second ' \t l\nin\ne")
+input("input u age: " )

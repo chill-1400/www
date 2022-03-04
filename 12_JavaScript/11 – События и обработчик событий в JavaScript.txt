@@ -1,0 +1,115 @@
+html file
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Изучение JavaScript</title>
+</head>
+<body>
+
+<!-- //1 Создания обработчика для события -->
+
+  <!-- <button onclick="alert('Зачем нажал на меня?')">Нажми на меня</button>-->
+
+<!-- //2 Отдельная функция для события -->
+
+  <!-- button onclick="onClickButton()">Нажми на меня</button>  -->
+
+<!--//3 html атрибуты событий -->
+
+  <!-- <p onclick="onClickButton()">Нажми на меня</p> -->
+
+
+    <!-- <button ondblclick="onClickButton()">Нажми на меня 2-ды</button>
+
+    <button onmouseover="onClickButton()">Наведи на меня </button>
+
+    <button onmouseout="onClickButton()">не уходи</button> -->
+
+    <!-- //4 подсччитываем нажатие на кнопку; 5 вывод инф-ии в штмл коде-->
+
+    <button name="mainButton" onclick="onClickButton(this)">Нажми на меня</button>
+
+    <input oninput="onInput(this)">
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+JS file
+
+
+
+
+//2 Отдельная функция для события
+
+// function onClickButton() {
+//   alert('Зачем нажал на меняя?')
+// }
+
+
+//4 подсччитываем нажатие на кнопку; 5 работа с штмл обьектом
+//изменение стилей
+
+var counter = 0;
+
+function onClickButton(el) {
+  counter++;
+  el.innerHTML = "вы нажали на кнопку: " + counter;
+  // el.style.background = "red";
+  // el.style.color = "blue";
+
+  el.style.cssText = "border-radius: 5px; border: 0; font-size: 20px";
+}
+
+function onInput(el) {
+  if(el.value == "hi")
+    alert("Welcome!");
+
+  console.log(el.value);
+}
+
+
+
+
+
+
+
+/*
+
+В HTML есть специальные атрибуты для каждого тега, которые способны вызвать функцию при определенном действии пользователя.
+Такие обработчики могут срабатывать в определенное событие: нажатие, наведение мышки, двойной клик, выбор элемента и так далее.
+
+В качестве значения для атрибута можно поместить функцию, которая будет вызываться каждый раз при срабатывании события.
+К примеру, если мы хотим вызвать всплывающее окно при двойном клике на текст, то стоит записать следующий HTML-код:
+
+<p ondblclick="testFunction()">Нажмите два раза</p>
+
+При двойном нажатии будет вызываться функция testFunction. Осталось лишь добавить саму функцию:
+
+function testFunction() {
+	alert("Вы нажали два раза!");
+}
+
+Вы также можете передать неограниченное количество параметров в саму функцию. 
+Для этого при вызове функции в круглых скобках записывайте значения для передачи данных.
+
+*/

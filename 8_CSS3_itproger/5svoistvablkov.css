@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {height: 2000px}
+
+#block {
+  width: 70%;
+  height: 200px;
+  background-color: #333;
+  border: 10px solid red;
+  /* border-width: 10px;
+  border-style: solid;
+  border-color: red;  */
+  /* border-bottom: 5px dashed #ccc;
+  border-top-color: blue;
+  border-radius: 100%; - круг */
+  border-radius: 0px 0px 250px 250px;
+  opacity: 0.8;
+  /* margin: 20px 50px 150px 200px; */
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  padding-bottom: 100px;
+
+
+  /* background: #1e1e21; */
+  /* max-width: 700px; /* Также существует min-width, max-height и min-height */ */
+}
+
+
+.block {
+  overflow: hidden;
+  /* overflow-x: hidden;
+  overflow-y: auto; */
+  max-width: 200px;
+  display: inline-block;
+}
+
+
+textarea {
+  max-width: 700px;
+  opacity: 0;
+}
+
+
+#image-full-page {
+  width: 100%;
+  height: 200px;
+  margin-top: 50px;
+
+/* 1 var */
+  /* background-image: url("../img/4.jpg");
+  /* background-position: center; */
+  /* background-repeat: repeat-x;
+  background-size: cover;
+  background-attachment: fixed; */
+
+/* 2 var */
+  background: url("../img/4.jpg") center repeat fixed;
+  background-blend-mode: multiply;
+  background-color: red;
+}
+
+
+/* border - граница */
+/* opacity - прозрачность */
+/* margin - внешний отступ */
+/* padding - внутренние отступы */
+/* overflow - переполнение (auto, scroll - контент скролится, hidden - прячет что не влазит)*/
+/* max-width-макс допустимая ширина Также существует min-width, max-height и min-height  */
+/* display - позволяет настроить отображение блока(большая тема)*/
+/* background-blend-mode-наложение слоёв */

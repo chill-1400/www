@@ -1,0 +1,55 @@
+# !цикл for
+#1.
+# for i in range(1, 6, 2): #(нач значение, кон.зн, шаг)
+#     print(i)
+
+#2.
+# count = 0
+# word = "Hello World!"
+# for i in word:
+#     if i == "l":
+#         count += 1
+#
+# print("Count: ", count)
+
+# !цикл while
+#3.
+# i = 5
+# while i <= 15:
+#    print(i)
+#    i+=2
+
+# 4.бесконечный цикл
+# isHasCar = True
+# while isHasCar:
+#     print(i)
+#     i+=2
+
+#5.исправл. вариант
+# isHasCar = True
+# while isHasCar:
+#     if input() == "Stop":
+#         isHasCar = False
+
+# !Операторы циклов
+#6.
+# for i in range(11):
+#     if i == 5:
+#         break #завершить цикл
+#
+#     if i % 2 == 0:
+#         continue #пропустить
+#
+#     print(i)
+
+# !Поиск символов в строке
+#7.
+found = None
+for i in "hello":
+    if i == "l":
+        found = True
+        break
+else:
+    found = False
+
+print(found)

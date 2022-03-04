@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Георгий Дударь">
+    <meta name="description" content="Тестовая страница">
+    <meta name="keywords" content="тест,проверка,html">
+
+    <title>Главная страница</title>
+  </head>
+  <body>
+    <a href="#bottomOfPage">Вниз</a><br>
+
+    <a href="https://google.com" target="_blank" title="Нажми на меня">Перейти в Google</a><br>
+
+    <a href="about.html">Перейти на страницу про нас</a><br>
+
+    <a name="bottomOfPage"></a>
+
+    <a href="mailto:admin@itproger.com">Написать на почту</a>
+
+  </body>
+</html>

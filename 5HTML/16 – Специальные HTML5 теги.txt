@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="георгий дуду">
+    <meta name="description" content="Тестовая страница"
+    <meta name="keywords" content="тест,проверка,html">
+
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="css/main.css">
+    <!--Подключаем табл. стилей, link для подкл css-->
+  </head>
+  <body>
+    <header>Шапка</header> <!--header описывает шапку сайта-->
+    <main>Основная часть сайта</main>
+    <aside>Боковая часть сайта</aside>
+    <footer>Футер</footer>
+
+    <progress max="1000" value="788">
+      загружено на 78.8%
+    </progress>
+
+    <details>
+      <summary>Подробнее</summary>
+      Lorem <mark>ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</mark> dolore magna aliqua.
+    </details>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+*{
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+/*1 создание нескольких обьектов
+.block {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  background: red;
+}
+
+/*Свойство float. Обтекание объектов*/
+/*
+#first {
+  float: right;
+}
+
+#second {
+  float: left;
+  background: blue;
+}
+*/
+
+/*написание стилей*/
+
+body {
+  height: 2000px;
+}
+
+#header{
+  width: 100%;
+  height: 70px;
+  text-align: center;
+  border-bottom: 3px solid #7B68EE;
+  background-color: #F0FFF0;
+  color: #7B68EE;
+  line-height: 70px;
+  margin-bottom: 30px;
+  float: left; /*позиционирование объектов  */
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+
+#nav {
+  background-color: #F0FFF0;
+  border-bottom: 3px solid #7B68EE;
+  overflow: hidden;
+  display: inline-block;
+  text-align: center;
+}
+
+#nav li {
+  display: inline;
+  border-radius: 3px;
+  background: #fafafa;
+  color: #7B68EE;
+  border: 0.5px solid #7B68EE;
+  padding: 15px 40px;
+  cursor: pointer;
+}
+
+#nav li:hover {
+  color: #FF8C00;
+  background: #FFF8DC;
+  border-color: #FF8C00;
+  border-radius: 3px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+#nav li:not(:last-of-type) {
+  margin-right: 150px
+}
+
+#main {
+  margin-left: 365px;
+  margin-top: 150px;
+}
+
+#main img:hover {
+  -webkit-box-shadow: 26px 24px 75px 40px rgba(140,127,94,1);
+  -moz-box-shadow: 26px 24px 75px 40px rgba(140,127,94,1);
+  box-shadow: 26px 24px 75px 40px rgba(140,127,94,1);
+  }

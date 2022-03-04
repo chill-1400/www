@@ -1,0 +1,23 @@
+<!-- наследуем шаблон base -->
+{% extends 'blog/base.html' %}
+
+{% block title %}
+  Вы успешно вышли с аккаунта
+{% endblock %}
+
+{% block style %}
+  <style type="text/css">
+
+    body {text-align: center}
+    
+    footer{
+      position: absolute;
+      bottom: 0;
+    }
+  </style>
+{% endblock %}
+
+{% block window %}
+  <h1>Вы успешно вышли с аккаунта<br><br></h1>
+  <a href="{% url 'user' %}">Войти в личный кабинет</a>
+{% endblock %}

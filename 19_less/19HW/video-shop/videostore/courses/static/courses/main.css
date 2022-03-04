@@ -1,0 +1,76 @@
+body {
+    background: #fafafa;
+}
+
+.courses, .main-block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    margin: 100px 10%;
+}
+
+.courses .course {
+    width: 30%;
+}
+
+.courses .course img {width: 100%}
+
+.main-block {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.one-course {margin-right: 100px}
+
+.form_add_cource .helptext {color: #b7b7b7}
+
+.form_add_cource ul.errorlist {
+    color: #ca5858;
+    font-weight: bold;
+    list-style-type: none;
+}
+
+.form_add_cource input, .form_add_cource textarea {
+  display: block;
+  width: 96%;
+  margin-top: 5px;
+  border: 0px;
+  border-radius: 5px;
+  padding: 2%;
+  resize: none;
+}
+
+form.comment_lesson {
+  max-height: 2%;
+  resize: none;
+  width: 90%;
+  margin-left: 5%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
+  background: #fafafa;
+
+}
+
+.image-full-page {
+  text-align: center;
+  height: 420px;
+  background-image:  url("http://st.gdefon.com/wallpapers_original/wallpapers/417645_doom_dos_code_1920x1080_(www.GdeFon.ru).jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+  position: relative;
+  margin-bottom: 0;
+  border-top: 8px solid SteelBlue;
+  border-bottom: 8px solid SteelBlue;
+}
+
+footer {
+    width: 96%;
+    margin-left: 2%;
+    position: relative;
+    margin-bottom: 0;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="георгий дуду">
+    <meta name="description" content="Тестовая страница"
+    <meta name="keywords" content="тест,проверка,html">
+
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="css/main.css">
+    <!--Подключаем табл. стилей, link для подкл css-->
+  </head>
+  <body>
+    <form>
+      <select multiple size="3"> <!--создание выпадающ. списка-->
+        <option disabled>---</option>
+        <option>bmw</option>
+        <option selected>audi</option>
+        <option selected>merc</option>
+      </select>
+    </form>
+  </body>
+</html>

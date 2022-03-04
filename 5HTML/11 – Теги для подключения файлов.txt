@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="георгий дуду">
+    <meta name="description" content="Тестовая страница"
+    <meta name="keywords" content="тест,проверка,html">
+
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="css/main.css"> 
+    <!--Подключаем табл. стилей, link для подкл css-->
+  </head>
+  
+  <body>
+
+      <script src="js/main.js"> </script>
+  </body>
+  <!--script для подкл javascript(лучше js место перед '</body>' )-->
+</html>

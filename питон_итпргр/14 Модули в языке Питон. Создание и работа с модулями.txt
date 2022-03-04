@@ -1,0 +1,45 @@
+#1 modul time
+# import time
+# time.sleep(3)
+# print('hello')
+
+
+
+#2 modul datetime
+# import datetime as d
+# print(d.datetime.now().time().hour)
+
+
+
+#3 modyl sys, os, platform
+# import datetime as d, sys, os, platform
+# print(sys.path) # sys.oath показывает полн. путь к текущему
+# # проекту
+# print(os.name) #получаем назв текущ ос
+# print(platform.system()) #выводится именно ваша платформа
+
+
+
+#4 разные форматы импорта
+# from math import sqrt as s,ceil # из модуля мат импортируем ф-ю
+# # скрт взятия в кв корень, ceil округляет
+# print(ceil(s(25)))
+
+
+
+
+#5 создание своего модуля
+# import mymodule as my # import all module
+# print(my.name)
+# my.hello()
+
+## импортируем часть модуля
+# from mymodule import add_three_numbers as add
+# print(add(5, 3, 6))
+
+
+
+
+#6 пакетный менеджер pip, установка библиотеки
+import cowsay
+cowsay.cow('hello')

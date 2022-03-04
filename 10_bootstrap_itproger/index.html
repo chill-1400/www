@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Bootstrap</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container-fluid bg">
+		<div class="row justify-content-between align-items-center">
+			<div class="col block align-self-stretch">
+				Row 1 col 1
+			</div>
+		
+		</div>
+
+		<div class="row">
+			<div class="col-xl-6 col-md-10 col-6">
+				Row 2 col 1
+			</div>
+			<div class="col-xl-6 col-md-2 col-6">
+				Row 2 col 2
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				Row 3 col 1
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+<!-- container с отступами -->
+<!-- container-fluid контейнер делает то что блок расстягивается на всю ширину-->
+
+<!-- <div class="row - это мы создали один ряд сетки (внутри одного ряда можно создать максимум 12 столбцов) -->
+
+<!-- <div class="col - это мы создали столбец -->
+
+<!-- <div class="col-6 - ширина столбца в ряду будет 50% -->
+
+<!-- <div class="col-xl-6  указываем что ширина столбца б. 50% (xl - при ширине экрана >=1200px)-->
+
+<!-- при ширине экрана от 768px до 1200px соотношение столбцов б. 10 к 2 -->
+<!-- <div class="col-xl-6 col-md-10"> -->
+<!-- <div class="col-xl-6 col-md-2  -->
+<!-- (md - при ширине экрана >=768px) -->
+
+<!-- <div class="col-xl-6 col-md-2 col-6" - добавим что от 0 до 768 длина б. 50%> -->
+<!-- добавив в конце col-6 -->
+
+<!-- так же существ. класс, кот. позволяет добавить отступы между столбцами-->
+
+<!-- <div class="col-xl-1 offset-1 block"> - здесь мы сделали отступ в 1 ячейку -->
+<!-- добавив offset-1 (а block - добавил серые границы)-->
+
+<!-- <div class="col-xl-1 offset-xl-4 - если шир. экр. б. >=1200px, то ширина блока = 1яч. и отступ=4яч -->
+
+<!-- <div class="row justify-content-end"> - все элементы будут предвинуты к концу при этом свойстве -->
+
+<!-- <div class="row justify-content-between"> - эл-ы воровнены на всю ширину блока + есть доп. отступы -->
+
+<!-- <div class="align-items-center"> - с этим свойством выравниваем по вертикали -->
+<!-- -strech на всю высоту, start - б. к верху прижаты, baseline - б. по 1 общ. линии растянуты-->
+
+<!-- align-self тоже самое только к одному элементу применяется -->

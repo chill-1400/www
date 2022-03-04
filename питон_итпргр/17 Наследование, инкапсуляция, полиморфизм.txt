@@ -1,0 +1,38 @@
+#1 создание основного класса
+class Building:
+    year = None
+    city = None
+
+    def __init__(self, year, city):
+        self.year = year
+        self.city = city
+
+    def get_info(self):
+        print("year:", self.year, ". city:", self.city)
+
+#2 работа с классом  наследником/и полиморфизм в классе школа
+class school(Building): #класс родителя мб только один
+    pupils = 0
+
+    def __init__(self, pupils, year, city):
+        super(school, self).__init__(year, city)
+        self.pupils = pupils
+
+    def get_info(self): #полиморфизм
+        print('pupils:', self.pupils, end = '  ')
+        super().get_info()
+
+
+class house(school):
+    pass
+
+class shop(Building): #класс родителя м.б. только один
+    pass
+
+School = school(100, 2000, 'Moscow')
+print("school:   ", end = "")
+School.get_info()
+House = house(15, 2000, 'Moscow')
+Shop = shop(2000, 'Moscow')
+print("shop:   ", end = "")
+Shop.get_info()

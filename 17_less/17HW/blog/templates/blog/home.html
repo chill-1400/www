@@ -1,0 +1,63 @@
+<!-- наследуем шаблон base -->
+{% extends 'blog/base.html' %}
+
+{% block title %}
+  {{ title }}
+{% endblock %}
+
+{% block style %}
+  <style type="text/css">
+
+    h4 {
+      color: white;
+    }
+
+    div.flex {
+      margin-top: 0px;
+      height: 600px;
+    }
+  </style>
+{% endblock %}
+
+{% block window %}
+  <div class="image-full-page">
+    <p class="h1 text-warning"><br><br><br>Интересные новости в мире IT!</p>
+    <p>
+      <a href="{% url 'interesting' %}" class="btn btn-warning mt-3">Посмотреть интересное <i class="fas fa-arrow-right"></i></a>
+    </p>
+  </div>
+{% endblock %}
+
+{% block aside_block %}
+  <center><h4 class="mt-2"> Интересные статьи:</h4></center>
+  <aside class="col-md-12 mt-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fflytothesky.ru%2Fwp-content%2Fuploads%2F2019%2F09%2F2.jpg&f=1&nofb=1" class="img-thumbnail mt-4">
+          <p>Попробуйте наш Todolist! Учтите, что после перезагрузки страницы с Todolist, список задач пропадёт :(</p>
+          <a href="/todo" target="blank">
+            <center><button class="btn btn-warning">Пробовать<i class="fas fa-arrow-right"></i></button></center>
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <img src="https://itproger.com/img/news/1619392789.png" class="img-thumbnail">
+          <p>Любой разработчик может научиться создавать чистый код, строго придерживаться графика, соблюдать дедлайны.</p>
+          <a href="https://itproger.com/news/9-sposobov-isportit-kod-izbavlyaemsya-ot-vrednih-privichek" target="blank">
+            <center><button class="btn btn-warning">Посмотреть <i class="fas fa-arrow-right"></i></button></center>
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <img src="https://itproger.com/img/news/1619392175.jpg" class="img-thumbnail mt-4">
+          <p>Невозможно эффективно использовать готовые решения без понимания алгоритмов и хорошего знания структур данных.</p>
+          <a href="https://itproger.com/news/9-sposobov-isportit-kod-izbavlyaemsya-ot-vrednih-privichek" target="blank">
+            <center><button class="btn btn-warning">Посмотреть <i class="fas fa-arrow-right"></i></button></center>
+          </a><br><br>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+{% endblock %}

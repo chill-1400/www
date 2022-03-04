@@ -1,0 +1,48 @@
+* {
+  background-color: #333;
+  color: white;
+}
+
+p {
+  margin-top: 60px;
+  background-color: darkblue;
+}
+
+.container {
+  margin: 40px;
+  padding: 0;
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  border: 1px solid #FFE4E1;
+  background: #3CB371;
+  align-items: center;
+}
+
+.Block {
+  margin: 0px;
+  width: 180px;
+	height: 180px;
+	background: darkblue;
+	transition: all 1s ease-in-out;
+  border-radius: 5px;
+  position: relative;
+  -webkit-animation-name: moving; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: moving;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite; /* количество повторений */
+  animation-direction: alternate;
+}
+
+.Block:hover {
+  -webkit-box-shadow: 22px 10px 5px 0px rgba(0,0,0,0.42);
+  -moz-box-shadow: 22px 10px 5px 0px rgba(0,0,0,0.42);
+  box-shadow: 22px 10px 5px 0px rgba(0,0,0,0.42);
+  border: 2px solid #772b2b;
+  opacity: 0.9;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Изучение JavaScript</title>
+</head>
+<body>
+  <noscript>
+    Включите JS!!!
+  </noscript>
+
+<!--  <script type="text/javascript"> //тег для подключения js
+    document.write("JS says hello!"); //1вывод информации(метод не особо используется)
+    console.log("JS says hello!");//2обращ. к обьекту console и ф-ии log
+    //(log ~ info одно и то же) этот вывод информации исп-ся чаще.
+    console.info("JS says hello!");
+    console.error("JS says hello!");//сообщение в формате ошибки
+    console.warn("JS says hello!");//сообщение в формате уведомадения
+  </script>-->
+
+  <script src="js/main.js"></script>
+</body>
+</html>

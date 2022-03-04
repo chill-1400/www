@@ -1,0 +1,50 @@
+html file
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML + CSS</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="first"></div>
+  <div id="second"></div>
+</body>
+</html>
+
+
+
+css file
+
+
+
+/*1установка цвета на задний фон*/
+/*body {*//*its for универсальное свойство background*/
+#first { /*2фиксированный задний фон*/
+  /*background-color: #d4786c;
+  color: #fff5f5;
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperboat.com%2Fwp-content%2Fuploads%2F2019%2F06%2Fhell-05.jpg&f=1&nofb=1);
+  background-repeat: no-repeat;
+  background-position: center; */
+
+/*2универсальное свойство background*/
+  color: #fff5f5;
+  background: #d4786c url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.3dtotal.com%2Frender-03.ll9yyc.expanded.99i.jpg&f=1&nofb=1) no-repeat center top;
+  height: 500px; /*было 100vh*/
+  background-size: cover;/*расстягивает кртнк на 100пр ширины*/
+  background-attachment: fixed; /*2фиксированный задний фон*/
+}
+
+
+#second { /*2фиксированный задний фон*/
+  height: 2000px;
+}
+
+body {
+  background-color: red;
+}
+

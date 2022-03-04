@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Список дел</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<h1>Список дел</h1>
+	<form autocomplete="off">
+		<input type="text" id="task" placeholder="Задание"><br><br>
+		<input type="button" id="add" value="Добавить" onclick="add_el()">
+		<input type="button" id="display" value="Отобразить" onclick="displayList()">
+	</form>
+	<div id="results"></div> 
+	<ul id="list"></ul>
+	
+	<!-- Программа на JavaScript -->
+<!-- 	<script src="js/js_program.js"></script> -->
+
+	<!-- Программа на jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="js/jquery_program.js"></script>
+</body>
+</html>

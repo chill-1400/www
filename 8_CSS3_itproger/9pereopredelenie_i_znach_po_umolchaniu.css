@@ -1,0 +1,26 @@
+p {color: blue!important}
+p.txt {color: red}
+
+p > span {
+  /* color: initial; */
+}
+
+.block {
+  background: #eee;
+  padding: 10px;
+  margin: 10px;
+}
+
+.block > p {
+  background: #ccc;
+  padding: inherit;
+  margin: unset;
+}
+
+/* p, .block > p {all: initial} */
+
+
+/* initial - возвращает изначальные св-ва (дефолт)*/
+/* inherit - позволяет унаследовать зн-ния от родительского эл-та */
+/* unset - комбинация inherit и initial (в таком же порядке inherit > initial) */
+/* !important - макс приоритет */

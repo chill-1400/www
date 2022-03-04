@@ -1,0 +1,124 @@
+<!-- наследуем шаблон base -->
+{% extends 'blog/base.html' %}
+
+{% block title %}
+  {{ title }}
+{% endblock %}
+
+{% block style %}
+  <style type="text/css">
+
+    .user_images {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+    }
+
+    div.flex {
+      margin-top: 25px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-right: 10px;
+    }
+
+    h4 {color: white}
+
+    div.alert {
+      width: 70%;
+      background: white;
+      text-align: center;
+      border: 1px solid #bfbfbf;
+      padding: 20px 10px;
+      margin-bottom: 25px;
+      margin-top: 25px;
+    }
+
+    div.alert h1 {color: black}
+
+    .btn,
+    button {
+      padding: 15px 25px;
+      padding-left: 45px;
+      border-radius: 5px;
+      border: 0;
+      font-size: 14px;
+      cursor: pointer;
+      background: #ffc107;
+      color: #704404;
+      font-weight: 500;
+      transition: background 600ms ease;
+    }
+
+    a.btn_3 button {
+      background: #CD5C5C;
+      padding: 15px 25px;
+    }
+
+    a.btn_3 button:hover {
+      background: #F08080;
+    }
+
+  </style>
+{% endblock %}
+
+{% block window %}
+  <!-- <h1>{{ title }}</h1> -->
+  <!-- создадим конструкцию с циклом перебора списка -->
+
+  <!-- тело цикла -->
+  <div class="alert alert-light">
+    <h1>{{ object.title }}</h1>
+    <p>{{ object.text|safe }}</p>
+    <div class="row">
+      <div>
+        <img src="{{ object.avtor.profile.img.url }}" alt="{{ object.avtor }}" class="user_images">
+      </div>
+      <div class="mt-2">
+        <span class="text-muted">Публикация: {{ object.date|date:"d E Y в H:i" }}</span>
+        <p><b>Автор:</b> <a href="{% url 'user-news' object.avtor %}">{{ object.avtor }}</a></p>
+      </div>
+    </div>
+    {% if object.avtor == user %}
+    <hr>
+    <a href="{% url 'news-update' object.id %}" class="btn">Обновить статью</a>
+    <a href="{% url 'news-delete' object.id %}" class="btn_3"><button class="btn">удалить статью</button></a>
+    {% endif %}
+  </div>
+  <!-- необходимо закрывать подобную конструкцию -->
+{% endblock %}
+
+{% block aside_block %}
+  <center><h4 class="mt-2"> Интересные статьи:</h4></center>
+  <aside class="col-md-12 mt-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fflytothesky.ru%2Fwp-content%2Fuploads%2F2019%2F09%2F2.jpg&f=1&nofb=1" class="img-thumbnail mt-4">
+          <p>Попробуйте наш Todolist! Учтите, что после перезагрузки страницы с Todolist, список задач пропадёт :(</p>
+          <a href="/todo" target="blank">
+            <center><button class="btn btn-warning">Пробовать<i class="fas fa-arrow-right"></i></button></center>
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <img src="https://itproger.com/img/news/1619392789.png" class="img-thumbnail">
+          <p>Любой разработчик может научиться создавать чистый код, строго придерживаться графика, соблюдать дедлайны.</p>
+          <a href="https://itproger.com/news/9-sposobov-isportit-kod-izbavlyaemsya-ot-vrednih-privichek" target="blank">
+            <center><button class="btn btn-warning">Посмотреть <i class="fas fa-arrow-right"></i></button></center>
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <img src="https://itproger.com/img/news/1619392175.jpg" class="img-thumbnail mt-4">
+          <p>Невозможно эффективно использовать готовые решения без понимания алгоритмов и хорошего знания структур данных.</p>
+          <a href="https://itproger.com/news/9-sposobov-isportit-kod-izbavlyaemsya-ot-vrednih-privichek" target="blank">
+            <center><button class="btn btn-warning">Посмотреть <i class="fas fa-arrow-right"></i></button></center>
+          </a><br><br>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+{% endblock %}

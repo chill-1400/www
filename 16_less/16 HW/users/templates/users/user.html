@@ -1,0 +1,30 @@
+<!-- наследуем шаблон base -->
+{% extends 'blog/base.html' %}
+
+{% block title %}
+  Страница авторизации
+{% endblock %}
+
+{% block style %}
+  <style type="text/css">
+    body {
+      text-align: center;
+    }
+
+    footer{
+      position: absolute;
+      bottom: 0;
+    }
+
+  </style>
+{% endblock %}
+
+{% block window %}
+  <h1>Страница авторизации</h1>
+  <!-- метод POST- значит "отправлять" -->
+  <form method="post" class="form-register auth">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-outline-warning" type="submit">Войти<i class="fas fa-arrow-right"></i></button>
+  </form>
+{% endblock %}

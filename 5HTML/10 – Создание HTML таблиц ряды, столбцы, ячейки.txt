@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="георгий дуду">
+    <meta name="description" content="Тестовая страница"
+    <meta name="keywords" content="тест,проверка,html">
+
+    <title>Главная страница</title>
+  </head>
+
+  <body>
+
+    <table border="1" width="500px">     <!--создание таблицы-->
+      <!--border~обводка, width~ширина-->
+
+      <thead>
+        <tr>    <!--создание рядов-->
+          <th>Name</th>     <!--создание заголовков-->
+          <th>Surname</th>
+        </tr>
+      </thead>
+
+      <tbody align="center">   <!--тело-->
+        <!--align~расп. в табл.-->
+        <tr>
+          <td>John1</td> <!--создание столбцов-->
+          <td>Dale1</td>
+        </tr>
+        <tr>
+          <td>John2</td>
+          <td>Dale2</td>
+        </tr>
+        <tr>
+          <td>John3</td>
+          <td>Dale3</td>
+        </tr>
+      </tbody>
+
+      <tfoot>    <!--ноги-->
+        <tr>
+          <td>Last</td>
+          <td>One</td>
+        </tr>
+      </tfoot>
+    </table>
+
+  </body>
+</html>

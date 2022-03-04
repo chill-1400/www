@@ -1,0 +1,28 @@
+#1 Функции строк
+#word = 'iTproger'
+#print(len(word))   # считает длину строки
+#print(word.count('p'))     # подсчитывает повт. символы
+# print(word.upper())     # приводит строку в верхний регистр
+# print(word.lower())     # приводит строку в нижн. регистр
+# print(word.isupper())   # true если стр. в верхн регистре
+# print(word.islower())   # true если стр. в нижн. рег.
+# print(word.capitalize())    # первый симвл - ББ, остальные с мал.
+# print(word.find('pro'))      # вычисление символа(ов) по индексу
+
+#2 разбитие строки по символу
+# word = 'Basketball, footbal, skate'
+# print(word.split(', '))     # разбитие строки по символу
+
+#3 Практика
+# word = 'Basketball, footbal, skate'
+# hobby = word.split(', ')
+# print(hobby[1])     # после разбития можно работать с каж. сост. строки
+
+#4 Практика
+word = 'BasKeTball, foOtbal, skatE'
+hobby = word.split(', ')
+for i in range(len(hobby)):
+    hobby[i] = hobby[i].capitalize()
+
+result = ', '.join(hobby)
+print(result)

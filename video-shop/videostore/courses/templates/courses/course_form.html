@@ -1,0 +1,51 @@
+<!-- наследуем шаблон base -->
+{% extends 'courses/main-layout.html' %}
+
+{% block title %}
+  Кабинет Пользователя
+{% endblock %}
+
+{% block style %}
+  <style type="text/css">
+
+    .main-block {
+        justify-content: center;
+        align-items: center;
+    }
+
+    div.alert{
+      margin-left: 0
+    }
+
+    .form_add_cource{
+        padding-bottom: 20px;
+        padding-left: 1%;
+        background: #fafafa;
+        border: 1px solid silver;
+        border-radius: 20px;
+        width: 45%;
+        margin-bottom: 5%;
+        margin-left: 27%;
+    }
+
+    footer {
+      position: relativee;
+      bottom: 0;
+    }
+
+  </style>
+{% endblock %}
+
+{% block main_section %}
+
+  <!-- <div class="alert text-muted pt-3"> -->
+    <form method="post" enctype="multipart/form-data" class="form_add_cource mt-5 pt-4 text-muted">
+      <center><h1>Добавление курса</h1></center><br>
+      <center><img class="bd-placeholder-img mr-2 rounded" width="94" height="94" src="pictures/form.png"></center><br>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <center><button class="btn btn-outline-info" type="submit">Добавить курс</button></center>
+    </form>
+  <!-- </div> -->
+
+{% endblock %}

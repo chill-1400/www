@@ -1,0 +1,31 @@
+#1 Списки (list)
+# nums = [5, 7, 2, 4, True, 6.7, [5, 7]]
+#
+# nums[0] = 50
+# nums[5] = 1.02
+#
+# print(nums[-1][-1])   # вывод последнего эл-та
+
+
+
+
+#2 Функции при раб. со списками
+numbers = [5, 2, 7]
+#   numbers[3] = 100   # нельзя обращаться к эл-ту, кот-го не сущ.!
+numbers.append(100)     # append позволяет добавить эл-т
+numbers.append(True)
+numbers.insert(1, True)     # утанавл знач. по ук-му индексу
+# смещаяя ост. эл-ты
+
+b = [5, 6, 7]
+numbers.extend(b) # уст. сразу неск. эл-ов в конец
+numbers.sort()
+numbers.reverse()
+
+numbers.pop(-1)    # позволяет удалить элемент последний или по индеку i
+numbers.remove(6)   # удаляет эл-т по опред. значению
+
+#   numbers.clear() # удаляет все эл-ты
+
+print(numbers.count(5)) # этот метод подсчитывает эл-ты 5-ки
+print(len(numbers))
